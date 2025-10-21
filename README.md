@@ -6,11 +6,12 @@ A Python script that analyzes subgraph deployments for a given wallet address on
 
 - **Subgraph Discovery**: Fetches all subgraphs and versions for a given wallet address
 - **Indexer Status Checking**: Monitors active indexers and their sync status
-- **Parallel Processing**: Efficiently checks multiple indexers simultaneously
+- **Efficient Data Fetching**: Uses The Graph Explorer progress API for fast, single-call indexer status retrieval
+- **Full Concurrent Processing**: Processes multiple subgraphs and their versions simultaneously for maximum speed
 - **Sync Percentage Calculation**: Calculates how far behind indexers are from chain head
 - **Health Monitoring**: Tracks indexer health status and error conditions
 - **Query Volume Analysis**: Fetches 30-day query volume data for each subgraph
-- **Data Export**: Exports results to CSV and JSON formats
+- **Data Export**: Exports results to CSV format
 - **Issue Detection**: Identifies subgraphs with sync issues or problems
 
 ## Prerequisites
@@ -199,7 +200,6 @@ pip install -r requirements.txt
 The script generates several output files:
 
 - **`subgraph_network_data.csv`**: Main results in CSV format
-- **`subgraph_network_data_detailed.json`**: Detailed results with full indexer status data
 - **`problematic_subgraphs.csv`**: Subgraphs with sync issues (if any)
 
 ## Output Columns
@@ -218,15 +218,6 @@ The script generates several output files:
 - `sync_percentage`: Highest sync percentage among all indexers
 - `query_volume_30d`: Total number of queries in the last 30 days
 - `query_volume_days`: Number of days the query volume data covers (usually 30)
-
-### JSON Output
-
-Includes all CSV data plus detailed indexer status information:
-
-- Individual indexer URLs and status
-- Block information (latest, chain head, earliest)
-- Error details (fatal and non-fatal)
-- Network information
 
 ## Understanding the Results
 
@@ -272,8 +263,10 @@ The amount of GRT (Graph Token) signal on the subgraph, indicating its importanc
    - You can proceed anyway if you're sure the address is correct
 
 4. **Slow performance**
-   - The script checks multiple indexers in parallel, but large numbers of subgraphs may take time
-   - Consider the network latency and indexer response times
+   - The script uses efficient APIs (progress and query volume) for fast data retrieval
+   - Full concurrent processing (subgraphs + versions) maximizes parallelization
+   - Processing time is dramatically reduced compared to individual indexer calls
+   - Large numbers of subgraphs may still take time due to API rate limits
 
 ### API Rate Limits
 
@@ -304,4 +297,5 @@ For issues related to:
 - **The Graph Network**: Visit [The Graph Documentation](https://thegraph.com/docs/)
 - **This Script**: Open an issue in this repository
 - **API Keys**: Contact [The Graph Support](https://thegraph.com/discord/)
+
 # subgraph-account-analysis

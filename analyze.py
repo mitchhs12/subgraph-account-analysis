@@ -304,6 +304,27 @@ def get_query_volume_30d(deployment_id: str) -> Optional[Dict]:
     
     return None
 
+def get_subgraph_progress(deployment_id: str) -> Optional[Dict]:
+    """
+    Get subgraph progress data from The Graph Explorer API.
+    This provides all indexer status information in a single call.
+    
+    Returns:
+        Dict with progress data or None if failed
+    """
+    try:
+        progress_url = f"https://thegraph.com/explorer/api/subgraph/progress/{deployment_id}"
+        response = requests.get(progress_url, timeout=30)
+        
+        if response.status_code == 200:
+            data = response.json()
+            if 'progress' in data and data['progress']:
+                return data
+    except Exception as error:
+        print(f"Error fetching progress for {deployment_id}: {error}")
+    
+    return None
+
 def get_start_block(manifest: str) -> int:
     """
     Extract the start block from manifest.
@@ -403,82 +424,282 @@ def check_indexer_status(deployment_id: str, indexer_url: str) -> Optional[Dict]
             'error': str(error)
         }
 
-def check_indexers_and_query_volume_parallel(deployment_id: str, indexer_urls: List[str], start_block: int, ipfs_hash: str, max_workers: int = 10) -> Tuple[List[Dict], List[str], Optional[Dict]]:
+def parse_progress_data(progress_data: Dict, start_block: int) -> Tuple[List[Dict], List[str]]:
     """
-    Check multiple indexers in parallel for a given deployment and fetch query volume.
+    Parse progress data from The Graph Explorer API.
+    
+    Args:
+        progress_data: Progress data from the API
+        start_block: The start block for sync percentage calculation
+        
+    Returns:
+        Tuple of (indexer_statuses, indexer_sync_percentages)
+    """
+    indexer_statuses = []
+    indexer_sync_percentages = []
+    
+    if not progress_data or 'progress' not in progress_data:
+        return indexer_statuses, indexer_sync_percentages
+    
+    for indexer_data in progress_data['progress']:
+        # Extract basic info
+        user_address = indexer_data.get('user', '')
+        health = indexer_data.get('health', 'unknown')
+        synced = indexer_data.get('synced', False)
+        user_image = indexer_data.get('userImage', '')
+        user_ens = indexer_data.get('userEns', '')
+        
+        # Extract chain data
+        chains = indexer_data.get('chains', [])
+        if chains:
+            chain = chains[0]  # Use first chain
+            chain_head_block = int(chain['chainHeadBlock']['number'])
+            latest_block = int(chain['latestBlock']['number'])
+            earliest_block = int(chain['earliestBlock']['number'])
+            network = chain.get('network', '')
+            
+            # Calculate sync percentage
+            sync_pct = get_sync_percentage(start_block, latest_block, chain_head_block)
+            
+            # Calculate blocks behind
+            blocks_behind = chain_head_block - latest_block
+            
+            # Create indexer status
+            status = {
+                'indexer_url': f"https://{user_address}.eth" if user_ens else f"https://{user_address}",
+                'indexer_id': user_address,
+                'status': 'success',
+                'synced': synced,
+                'health': health,
+                'entity_count': '0',  # Not available in progress API
+                'paused': False,  # Not available in progress API
+                'node': user_address,
+                'latest_block': latest_block,
+                'chain_head_block': chain_head_block,
+                'earliest_block': earliest_block,
+                'blocks_behind': blocks_behind,
+                'network': network,
+                'user_image': user_image,
+                'user_ens': user_ens
+            }
+            
+            indexer_statuses.append(status)
+            indexer_sync_percentages.append(sync_pct)
+        else:
+            # Indexer with no chain data
+            status = {
+                'indexer_url': f"https://{user_address}.eth" if user_ens else f"https://{user_address}",
+                'indexer_id': user_address,
+                'status': 'success',
+                'synced': synced,
+                'health': health,
+                'entity_count': '0',
+                'paused': False,
+                'node': user_address,
+                'user_image': user_image,
+                'user_ens': user_ens
+            }
+            
+            indexer_statuses.append(status)
+            indexer_sync_percentages.append("N/A")
+    
+    return indexer_statuses, indexer_sync_percentages
+
+def get_subgraph_data_efficiently(deployment_id: str, start_block: int, ipfs_hash: str) -> Tuple[List[Dict], List[str], Optional[Dict]]:
+    """
+    Get subgraph data efficiently using the progress API instead of individual indexer calls.
     
     Args:
         deployment_id: The IPFS hash of the subgraph deployment
-        indexer_urls: List of indexer URLs to check
         start_block: The start block for sync percentage calculation
-        max_workers: Maximum number of concurrent threads
+        ipfs_hash: IPFS hash for logging
         
     Returns:
         Tuple of (indexer_statuses, indexer_sync_percentages, query_volume_data)
     """
-    indexer_statuses = []
-    indexer_sync_percentages = []
-    query_volume_data = None
+    print(f"    Fetching progress data for version {ipfs_hash}...")
     
-    if not indexer_urls:
-        # Still fetch query volume even if no indexers
-        query_volume_data = get_query_volume_30d(deployment_id)
-        return indexer_statuses, indexer_sync_percentages, query_volume_data
-    
-    print(f"    Checking {len(indexer_urls)} active indexers for version {ipfs_hash}...")
-    
-    def check_single_indexer(indexer_url):
-        """Check a single indexer and return both status and sync percentage."""
-        status_result = check_indexer_status(deployment_id, indexer_url)
-        
-        if status_result:
-            # Calculate sync percentage for this indexer
-            if (status_result.get('status') == 'success' and 
-                'latest_block' in status_result and 
-                'chain_head_block' in status_result):
-                
-                latest_block = status_result['latest_block']
-                chain_head_block = status_result['chain_head_block']
-                sync_pct = get_sync_percentage(start_block, latest_block, chain_head_block)
-            else:
-                sync_pct = "N/A"
-            
-            return status_result, sync_pct
-        else:
-            return None, "N/A"
-    
-    # Use ThreadPoolExecutor for parallel execution
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # Submit indexer checking tasks
-        future_to_url = {
-            executor.submit(check_single_indexer, url): url 
-            for url in indexer_urls
-        }
-        
-        # Submit query volume task
+    # Use ThreadPoolExecutor to fetch both progress and query volume in parallel
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        # Submit both tasks
+        progress_future = executor.submit(get_subgraph_progress, deployment_id)
         query_volume_future = executor.submit(get_query_volume_30d, deployment_id)
         
-        # Process completed indexer tasks
-        for future in as_completed(future_to_url):
-            indexer_url = future_to_url[future]
-            try:
-                status_result, sync_pct = future.result()
-                if status_result:
-                    indexer_statuses.append(status_result)
-                    indexer_sync_percentages.append(sync_pct)
-                else:
-                    indexer_sync_percentages.append("N/A")
-            except Exception as e:
-                print(f"    Error checking {indexer_url}: {e}")
-                indexer_sync_percentages.append("N/A")
+        # Get results
+        progress_data = None
+        query_volume_data = None
         
-        # Get query volume result
+        try:
+            progress_data = progress_future.result()
+        except Exception as e:
+            print(f"    Error fetching progress for {deployment_id}: {e}")
+        
         try:
             query_volume_data = query_volume_future.result()
         except Exception as e:
             print(f"    Error fetching query volume for {deployment_id}: {e}")
     
+    # Parse progress data
+    if progress_data:
+        indexer_statuses, indexer_sync_percentages = parse_progress_data(progress_data, start_block)
+        print(f"    Found {len(indexer_statuses)} indexers in progress data")
+    else:
+        indexer_statuses = []
+        indexer_sync_percentages = []
+        print(f"    No progress data available for {ipfs_hash}")
+    
     return indexer_statuses, indexer_sync_percentages, query_volume_data
+
+def process_subgraph_versions(subgraph_data: Dict, subgraph_idx: int, total_subgraphs: int) -> List[Dict]:
+    """
+    Process all versions of a single subgraph concurrently.
+    
+    Args:
+        subgraph_data: Subgraph data containing versions
+        subgraph_idx: Index of this subgraph (for logging)
+        total_subgraphs: Total number of subgraphs (for logging)
+        
+    Returns:
+        List of row data for all versions of this subgraph
+    """
+    subgraph_id = subgraph_data['id']
+    versions = subgraph_data['versions']
+    num_versions = len(versions)
+    
+    print(f"[{subgraph_idx}/{total_subgraphs}] Processing subgraph: {subgraph_id} ({num_versions} versions)")
+    
+    # Process all versions of this subgraph concurrently
+    rows = []
+    if num_versions == 0:
+        return rows
+    
+    max_workers = min(10, num_versions)  # Limit workers per subgraph
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Submit all version processing tasks for this subgraph
+        future_to_version = {
+            executor.submit(
+                process_subgraph_version,
+                version,
+                subgraph_id,
+                version_idx,
+                num_versions
+            ): version for version_idx, version in enumerate(versions)
+        }
+        
+        # Process completed tasks
+        for future in as_completed(future_to_version):
+            version = future_to_version[future]
+            try:
+                row = future.result()
+                rows.append(row)
+            except Exception as e:
+                print(f"  Error processing version of subgraph {subgraph_id}: {e}")
+    
+    return rows
+
+def process_subgraph_version(version_data: Dict, subgraph_id: str, version_idx: int, total_versions: int) -> Dict:
+    """
+    Process a single subgraph version and return the row data.
+    
+    Args:
+        version_data: Version data from the subgraph
+        subgraph_id: The subgraph ID
+        version_idx: Index of this version (for logging)
+        total_versions: Total number of versions (for logging)
+        
+    Returns:
+        Dict containing the row data for this version
+    """
+    deployment = version_data['subgraphDeployment']
+    ipfs_hash = deployment['ipfsHash']
+    signalled_tokens = deployment['signalledTokens']
+    indexer_allocations = deployment['indexerAllocations']
+    
+    # Get active indexers (for reference, but we'll use progress API data)
+    indexer_ids = [alloc['indexer']['id'] for alloc in indexer_allocations]
+    indexer_urls = [alloc['indexer']['url'] for alloc in indexer_allocations if alloc['indexer'].get('url')]
+    indexers_str = ', '.join(indexer_ids) if indexer_ids else 'None'
+    
+    # Log version processing
+    if indexer_urls:
+        print(f"  Version {version_idx + 1}/{total_versions} {ipfs_hash}: {len(indexer_urls)} active indexers")
+    else:
+        print(f"  Version {version_idx + 1}/{total_versions} {ipfs_hash}: No active indexers")
+    
+    # Get manifest to extract start block (only once per deployment)
+    manifest = get_manifest_as_string(ipfs_hash)
+    start_block = get_start_block(manifest) if manifest else 0
+    
+    # Get subgraph data efficiently using progress API
+    indexer_statuses, indexer_sync_percentages, query_volume_data = get_subgraph_data_efficiently(
+        ipfs_hash, start_block, ipfs_hash
+    )
+    
+    # Create sync percentages string
+    sync_percentages_str = ', '.join(indexer_sync_percentages) if indexer_sync_percentages else 'None'
+    
+    # Create indexer IDs string from progress data
+    progress_indexer_ids = [status.get('indexer_id', '') for status in indexer_statuses if status.get('indexer_id')]
+    progress_indexers_str = ', '.join(progress_indexer_ids) if progress_indexer_ids else 'None'
+    
+    # Create a row for this subgraph-IPFS combination
+    row = {
+        'subgraph_id': subgraph_id,
+        'ipfs_hash': ipfs_hash,
+        'signal_amount': signalled_tokens,
+        'active_indexers': progress_indexers_str,  # Use indexers from progress data
+        'indexer_sync_percentages': sync_percentages_str,
+        'indexer_count': len(indexer_statuses),  # Use count from progress data
+        'indexer_statuses': indexer_statuses
+    }
+    
+    # Add query volume data
+    if query_volume_data:
+        row['query_volume_30d'] = query_volume_data.get('query_volume_30d', 0)
+        row['query_volume_days'] = query_volume_data.get('query_volume_days', 0)
+    else:
+        row['query_volume_30d'] = 0
+        row['query_volume_days'] = 0
+    
+    # Add summary status information
+    if indexer_statuses:
+        successful_statuses = [s for s in indexer_statuses if s.get('status') == 'success']
+        synced_count = sum(1 for s in successful_statuses if s.get('synced', False))
+        healthy_count = sum(1 for s in successful_statuses if s.get('health') == 'healthy')
+        
+        # Find the highest sync percentage from indexer_sync_percentages
+        highest_sync_pct = "0%"
+        if indexer_sync_percentages:
+            # Filter out "N/A" values and extract numeric percentages
+            numeric_percentages = []
+            for pct in indexer_sync_percentages:
+                if pct != "N/A" and pct.endswith('%'):
+                    try:
+                        # Extract the number before the % sign
+                        numeric_value = float(pct[:-1])
+                        numeric_percentages.append(numeric_value)
+                    except ValueError:
+                        continue
+            
+            if numeric_percentages:
+                highest_sync_pct = f"{max(numeric_percentages):.1f}%"
+        
+        row.update({
+            'indexers_responding': len(successful_statuses),
+            'indexers_synced': synced_count,
+            'indexers_healthy': healthy_count,
+            'sync_percentage': highest_sync_pct
+        })
+    else:
+        row.update({
+            'indexers_responding': 0,
+            'indexers_synced': 0,
+            'indexers_healthy': 0,
+            'sync_percentage': "0%"
+        })
+    
+    return row
 
 # Get account ID from user input
 print("Graph Network Subgraph Analysis Tool")
@@ -544,98 +765,42 @@ rows = []
 print("Processing subgraphs and checking indexer status...")
 start_time = time.time()
 
-for sg_idx, sg in enumerate(subgraphs, 1):
-    subgraph_id = sg['id']
-    num_versions = len(sg['versions'])
-    print(f"\n[{sg_idx}/{len(subgraphs)}] Processing subgraph: {subgraph_id} ({num_versions} versions)")
+# Process all subgraphs concurrently
+rows = []
+max_subgraph_workers = min(5, len(subgraphs))  # Limit concurrent subgraphs
+total_versions = sum(len(sg['versions']) for sg in subgraphs)
+
+print(f"Processing {len(subgraphs)} subgraphs ({total_versions} total versions) concurrently...")
+
+with ThreadPoolExecutor(max_workers=max_subgraph_workers) as executor:
+    # Submit all subgraph processing tasks
+    future_to_subgraph = {
+        executor.submit(
+            process_subgraph_versions,
+            sg,
+            sg_idx + 1,
+            len(subgraphs)
+        ): sg for sg_idx, sg in enumerate(subgraphs)
+    }
     
-    # Process each version of the subgraph
-    for version in sg['versions']:
-        deployment = version['subgraphDeployment']
-        ipfs_hash = deployment['ipfsHash']
-        signalled_tokens = deployment['signalledTokens']
-        indexer_allocations = deployment['indexerAllocations']
-        
-        # Get active indexers
-        indexer_ids = [alloc['indexer']['id'] for alloc in indexer_allocations]
-        indexer_urls = [alloc['indexer']['url'] for alloc in indexer_allocations if alloc['indexer'].get('url')]
-        indexers_str = ', '.join(indexer_ids) if indexer_ids else 'None'
-        
-        # Log version processing
-        if indexer_urls:
-            print(f"  Version {ipfs_hash}: {len(indexer_urls)} active indexers")
-        else:
-            print(f"  Version {ipfs_hash}: No active indexers")
-        
-        # Get manifest to extract start block (only once per deployment)
-        manifest = get_manifest_as_string(ipfs_hash)
-        start_block = get_start_block(manifest) if manifest else 0
-        
-        # Check status for each indexer in parallel and fetch query volume
-        indexer_statuses, indexer_sync_percentages, query_volume_data = check_indexers_and_query_volume_parallel(
-            ipfs_hash, indexer_urls, start_block, ipfs_hash, max_workers=10
-        )
-        
-        # Create sync percentages string
-        sync_percentages_str = ', '.join(indexer_sync_percentages) if indexer_sync_percentages else 'None'
-        
-        # Create a row for each subgraph-IPFS combination
-        row = {
-            'subgraph_id': subgraph_id,
-            'ipfs_hash': ipfs_hash,
-            'signal_amount': signalled_tokens,
-            'active_indexers': indexers_str,
-            'indexer_sync_percentages': sync_percentages_str,
-            'indexer_count': len(indexer_urls),
-            'indexer_statuses': indexer_statuses
-        }
-        
-        # Add query volume data
-        if query_volume_data:
-            row['query_volume_30d'] = query_volume_data.get('query_volume_30d', 0)
-            row['query_volume_days'] = query_volume_data.get('query_volume_days', 0)
-        else:
-            row['query_volume_30d'] = 0
-            row['query_volume_days'] = 0
-        
-        # Add summary status information
-        if indexer_statuses:
-            successful_statuses = [s for s in indexer_statuses if s.get('status') == 'success']
-            synced_count = sum(1 for s in successful_statuses if s.get('synced', False))
-            healthy_count = sum(1 for s in successful_statuses if s.get('health') == 'healthy')
+    # Process completed tasks
+    completed_subgraphs = 0
+    completed_versions = 0
+    
+    for future in as_completed(future_to_subgraph):
+        subgraph = future_to_subgraph[future]
+        try:
+            subgraph_rows = future.result()
+            rows.extend(subgraph_rows)
+            completed_subgraphs += 1
+            completed_versions += len(subgraph_rows)
             
-            # Find the highest sync percentage from indexer_sync_percentages
-            highest_sync_pct = "0%"
-            if indexer_sync_percentages:
-                # Filter out "N/A" values and extract numeric percentages
-                numeric_percentages = []
-                for pct in indexer_sync_percentages:
-                    if pct != "N/A" and pct.endswith('%'):
-                        try:
-                            # Extract the number before the % sign
-                            numeric_value = float(pct[:-1])
-                            numeric_percentages.append(numeric_value)
-                        except ValueError:
-                            continue
+            # Progress logging
+            print(f"  Completed subgraph {completed_subgraphs}/{len(subgraphs)} ({completed_versions}/{total_versions} versions)...")
                 
-                if numeric_percentages:
-                    highest_sync_pct = f"{max(numeric_percentages):.1f}%"
-            
-            row.update({
-                'indexers_responding': len(successful_statuses),
-                'indexers_synced': synced_count,
-                'indexers_healthy': healthy_count,
-                'sync_percentage': highest_sync_pct
-            })
-        else:
-            row.update({
-                'indexers_responding': 0,
-                'indexers_synced': 0,
-                'indexers_healthy': 0,
-                'sync_percentage': "0%"
-            })
-        
-        rows.append(row)
+        except Exception as e:
+            print(f"  Error processing subgraph {subgraph['id']}: {e}")
+            completed_subgraphs += 1
 
 # Calculate total processing time
 end_time = time.time()
@@ -651,34 +816,7 @@ csv_df = df.drop('indexer_statuses', axis=1)
 output_file = 'subgraph_network_data.csv'
 csv_df.to_csv(output_file, index=False)
 
-# Save detailed data with status information to JSON
-json_output_file = 'subgraph_network_data_detailed.json'
-with open(json_output_file, 'w') as f:
-    # Convert the data to JSON-serializable format
-    json_data = []
-    for _, row in df.iterrows():
-        json_row = row.to_dict()
-        # Convert indexer_statuses to a simpler format for JSON
-        if 'indexer_statuses' in json_row and json_row['indexer_statuses']:
-            json_row['indexer_statuses'] = [
-                {
-                    'indexer_url': status.get('indexer_url', ''),
-                    'status': status.get('status', ''),
-                    'synced': status.get('synced', False),
-                    'health': status.get('health', ''),
-                    'entity_count': status.get('entity_count', ''),
-                    'blocks_behind': status.get('blocks_behind', 0),
-                    'network': status.get('network', ''),
-                    'error': status.get('error', '')
-                }
-                for status in json_row['indexer_statuses']
-            ]
-        json_data.append(json_row)
-    
-    json.dump(json_data, f, indent=2)
-
 print(f"\nData saved to {output_file}")
-print(f"Detailed data saved to {json_output_file}")
 print(f"DataFrame shape: {df.shape}")
 print(f"Columns: {list(csv_df.columns)}")
 
@@ -748,7 +886,7 @@ if not issues.empty:
     latest_versions = df.groupby('subgraph_id')['ipfs_hash'].last().reset_index()
     latest_versions['is_latest'] = True
     issues_display = issues_display.merge(latest_versions[['ipfs_hash', 'is_latest']], on='ipfs_hash', how='left')
-    issues_display['is_latest'] = issues_display['is_latest'].fillna(False)
+    issues_display['is_latest'] = issues_display['is_latest'].fillna(False).infer_objects(copy=False)
     
     # Format signal amount for better readability (convert from wei to GRT)
     issues_display['signal_amount_formatted'] = issues_display['signal_amount'].apply(
