@@ -1,0 +1,4456 @@
+[
+  {
+    "subgraph_id": "2LzmAwGnnx9QFCWFKXcQSW25NSmWdPz2xmyhvNdhiMiV",
+    "ipfs_hash": "QmbQYPw1hwetxokYJ2RsmZwSdz8wTwokM67SQuaYPVt1Hv",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "2LzmAwGnnx9QFCWFKXcQSW25NSmWdPz2xmyhvNdhiMiV",
+    "ipfs_hash": "QmcgQDL7geSKZPeaTtYtKtxo83kGkLBhjcArT85jhWnbEo",
+    "signal_amount": "1379497437692995274",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 21,
+    "query_volume_days": 30,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "2sPwHiwmBhF1JN1eh5cBLpVvdMBED9ifu3vvn1gyhpsW",
+    "ipfs_hash": "Qmd6UuNsMoDK2RURU8xXdi65Ce6Uk45m8SErozw1ewSXra",
+    "signal_amount": "999999999999999999",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "unhealthy",
+        "entity_count": "84376023",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 24,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "3H9wustUKhZs3pCkF4qcKQCLy8h7VC8KntqQz4Jpy8KD",
+    "ipfs_hash": "QmbrFUBJRnh5yKwxiem6KEzEtbdcNuU3VT9qUVYitVBGvw",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3H9wustUKhZs3pCkF4qcKQCLy8h7VC8KntqQz4Jpy8KD",
+    "ipfs_hash": "QmV316dNff6bqBin7eJw6kSf3hJeNNb5iQmYEHFDCpPu9s",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3H9wustUKhZs3pCkF4qcKQCLy8h7VC8KntqQz4Jpy8KD",
+    "ipfs_hash": "QmYDPeVD8tZ3JueTYcpSuXGtphGBJ2nx8YwePAqnorjM23",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3H9wustUKhZs3pCkF4qcKQCLy8h7VC8KntqQz4Jpy8KD",
+    "ipfs_hash": "QmehdE6BS2uPR6avHoMS7AaN6ethqPQPLASro4joc74kPA",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3H9wustUKhZs3pCkF4qcKQCLy8h7VC8KntqQz4Jpy8KD",
+    "ipfs_hash": "QmUvzsQqif41g2vc1XticrAFy6GtE9EwTyYeRVwM7CY4Wu",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3H9wustUKhZs3pCkF4qcKQCLy8h7VC8KntqQz4Jpy8KD",
+    "ipfs_hash": "QmRAmjU6WWfB6SZbqhSWUrnAZRdzhpD6PARXjLMJXtoZPZ",
+    "signal_amount": "1464559034622456391218",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xedca8740873152ff30a2696add66d1ab41882beb",
+    "indexer_sync_percentages": "100%, 100%, 99%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "741545",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "741465",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "741108",
+        "blocks_behind": 2,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 79380,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "3LAyKe1ULM4nA3cUFRgWzY3U8wSMXSMyAHZLxzxrTZ2c",
+    "ipfs_hash": "QmVGXxWk85ASzfdtHa5XphGSZzFmi4AuUne8dv3aC2jz6z",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3LAyKe1ULM4nA3cUFRgWzY3U8wSMXSMyAHZLxzxrTZ2c",
+    "ipfs_hash": "QmWRzcHZRwgJGCtSiW1pGLs6aVYnYKeEeVBcke2jQ7qp2Q",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "3LAyKe1ULM4nA3cUFRgWzY3U8wSMXSMyAHZLxzxrTZ2c",
+    "ipfs_hash": "QmNyYATJuzcWWHFGWM2Gnf2XrP7beCm8EeFxmdAdX4muYH",
+    "signal_amount": "1803436187886036693705",
+    "active_indexers": "0x35917c0eb91d2e21bef40940d028940484230c06, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xe13840a2e92e0cb17a246609b432d0fa2e418774",
+    "indexer_sync_percentages": "100%, 100%, 99%, 97%, 99%, 99%",
+    "indexer_count": 6,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11745",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11745",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11745",
+        "blocks_behind": 3,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11668",
+        "blocks_behind": 780632,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11712",
+        "blocks_behind": 11,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11745",
+        "blocks_behind": 400,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 2809300,
+    "query_volume_days": 30,
+    "indexers_responding": 6,
+    "indexers_synced": 6,
+    "indexers_healthy": 6,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "3V7ZY6muhxaQL5qvntX1CFXJ32W7BxXZTGTwmpH5J4t3",
+    "ipfs_hash": "Qmcdu8weFbmtZpeZaGs8vCpSdWKRPwyvDMX6CftYnW2KZB",
+    "signal_amount": "22539621048100658363639",
+    "active_indexers": "0xedca8740873152ff30a2696add66d1ab41882beb, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xeccdf8231326a9c5aad32df76a633aaa4c49b104",
+    "indexer_sync_percentages": "100%, 99%, 93%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "63837419",
+        "blocks_behind": -7,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "63837419",
+        "blocks_behind": 1,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.catapulta.su",
+        "status": "success",
+        "synced": false,
+        "health": "healthy",
+        "entity_count": "59610334",
+        "blocks_behind": 26719627,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 10630694,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 2,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "3a88zQrAoRYVhPKzzQXwUB4ZkTHohjq1nU5onxyvsZMK",
+    "ipfs_hash": "QmQXxC5kmwU6QTPAwL7YGKRrgxfypEa7gfQShtf1UH18gV",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "59698584",
+        "blocks_behind": 175484,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 4,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "41aFCdU2ofcR5KRrvFN5jxePAPjDaY2c1di5mZdmPqND",
+    "ipfs_hash": "QmVbcDcT2s2BViXjqjLRqYDHRFgi5sJVjjf6KqKxbW8Csv",
+    "signal_amount": "9126928009318975221789",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xdecba5154aab37ae5e381a19f804f3af4d1bcbb5, 0x35917c0eb91d2e21bef40940d028940484230c06, 0x4e5c87772c29381bcabc58c3f182b6633b5a274a, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51",
+    "indexer_sync_percentages": "100%, 100%, 99%, 100%, 99%, 81%, 87%, 100%, 99%, 99%",
+    "indexer_count": 10,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67661",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67661",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67661",
+        "blocks_behind": 1,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arb-service.thegraph.datanexus.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67653",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67661",
+        "blocks_behind": 2,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "66674",
+        "blocks_behind": 10213984,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "67165",
+        "blocks_behind": 6985517,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67661",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.decisionbasis.cc",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "67661",
+        "blocks_behind": 14733,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "67661",
+        "blocks_behind": 6,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 7904781,
+    "query_volume_days": 30,
+    "indexers_responding": 10,
+    "indexers_synced": 10,
+    "indexers_healthy": 7,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "4oYKWwTeEzJaFnRM7YtT2SsogtdtiWonHb3hiS3eMRWo",
+    "ipfs_hash": "Qmb27RY3RqP98UMKbTgScf6F7hhokfMuS9fV7VAtPiZHwF",
+    "signal_amount": "11724314838275978414933",
+    "active_indexers": "0xedca8740873152ff30a2696add66d1ab41882beb, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x38f412c8d6346a17a53ff9ceecd2e01acecd27c0, 0x35917c0eb91d2e21bef40940d028940484230c06, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0x9082f497bdc512d08ffde50d6fce28e72c2addcf, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xdecba5154aab37ae5e381a19f804f3af4d1bcbb5, 0xf00f7157fa8fd0420b87956d46058a16b2f23adc, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d",
+    "indexer_sync_percentages": "100%, 100%, 100%, 100%, 100%, 99%, 99%, 100%, 99%, 100%, 100%",
+    "indexer_count": 11,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.decisionbasis.cc",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "152388",
+        "blocks_behind": 2220,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 1,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.holographic.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-booster-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 1,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152403",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-arbitrum-one-indexer-1.graphops.xyz",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "152398",
+        "blocks_behind": -1,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 16089025,
+    "query_volume_days": 30,
+    "indexers_responding": 11,
+    "indexers_synced": 11,
+    "indexers_healthy": 10,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "57oNmeb9XpMYMMA58dtTzNLD2WNJhFDDSdjSLLoUBh8T",
+    "ipfs_hash": "QmVY7cKn81VaZE1HhjXdL8a7vRvzbTFrgsWMzpVzQBmdz4",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5GwPCwBmgQ5Uw23ZGtfj8Jfsuye12crxkz5RdYvKtT8h",
+    "ipfs_hash": "QmY6FLAhghwGn2gh9cb299sySZ2DUY8GkSh1A1PesfmUcC",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "34668",
+        "blocks_behind": 298,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "5GwPCwBmgQ5Uw23ZGtfj8Jfsuye12crxkz5RdYvKtT8h",
+    "ipfs_hash": "QmaeK2QJGUf9w2noLvUwExca5uHgjGkM8b3J3bA9iMGwvW",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5GwPCwBmgQ5Uw23ZGtfj8Jfsuye12crxkz5RdYvKtT8h",
+    "ipfs_hash": "QmPdH9fdeioZcnX38e2ucPhzaRVfLHAaWnNKerZqfPgiYJ",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "35090",
+        "blocks_behind": 4,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "5GwPCwBmgQ5Uw23ZGtfj8Jfsuye12crxkz5RdYvKtT8h",
+    "ipfs_hash": "QmXudkz7JaVMBW6KB7qi2Py5aYzYaiykJHgmphiHdUrKvU",
+    "signal_amount": "991621087221674159420",
+    "active_indexers": "0x35917c0eb91d2e21bef40940d028940484230c06, 0xedca8740873152ff30a2696add66d1ab41882beb, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "100%, 100%, 100%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "36210",
+        "blocks_behind": -2,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "36210",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "36206",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 228578,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "5mvK3d3tyHoUhMcquXFRfmGn7sWtXovNoraQMVCoqWHS",
+    "ipfs_hash": "Qmc3ZNr4CzQ9pFwWYP1BrgDnDD13kW9g8YxXrT5JRVqgZP",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5mvK3d3tyHoUhMcquXFRfmGn7sWtXovNoraQMVCoqWHS",
+    "ipfs_hash": "QmcCfjyJcHsKWauM9j8ShavSAt4PyxiudxJG61fYxu7ede",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5mvK3d3tyHoUhMcquXFRfmGn7sWtXovNoraQMVCoqWHS",
+    "ipfs_hash": "QmXD7aASkZG7Lj39Ek8jH5mhqgokrb95CTywixueDeNwKZ",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5mvK3d3tyHoUhMcquXFRfmGn7sWtXovNoraQMVCoqWHS",
+    "ipfs_hash": "QmNbdixvustXQm4pSWbj6CmVmX2Qw6JbAdBTFbKZvSsSZh",
+    "signal_amount": "495249087677355665394",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51",
+    "indexer_sync_percentages": "100%, 100%",
+    "indexer_count": 2,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "10792",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "10797",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 79376,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 2,
+    "indexers_healthy": 2,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "5qJjibWkWfjm2H5Z1ye2gwveTfSBJ7HjPcqvy91dgri3",
+    "ipfs_hash": "Qma6vGQGtbN329VUPdev5r8mdjNSXVVRTScSaZd7VNPdv5",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5qJjibWkWfjm2H5Z1ye2gwveTfSBJ7HjPcqvy91dgri3",
+    "ipfs_hash": "QmRq5vzRGvp5Sq1NBnSVggkLFC4TQLrdnW5ZPf29ZyYRrm",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5qJjibWkWfjm2H5Z1ye2gwveTfSBJ7HjPcqvy91dgri3",
+    "ipfs_hash": "QmV2WQzbXvm6SZyqDXpg8GtxkXJuDey6PemWo91FLZLefR",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5qJjibWkWfjm2H5Z1ye2gwveTfSBJ7HjPcqvy91dgri3",
+    "ipfs_hash": "QmQFGSPqZVwqyhPtmqdbc41mqaXA3U2NkXE5Z1iAn1T3tR",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "5qJjibWkWfjm2H5Z1ye2gwveTfSBJ7HjPcqvy91dgri3",
+    "ipfs_hash": "QmegqhCaVZoq94q9wyHSP2ALSHdyKuPYEwSozK87UT6XiZ",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "2069",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 2,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "5qJjibWkWfjm2H5Z1ye2gwveTfSBJ7HjPcqvy91dgri3",
+    "ipfs_hash": "QmYuA3jRyNdL7YyzNiXTSzDNkDMYNhSKKF83J4ggRQFXbp",
+    "signal_amount": "967930592946559660401",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x3b9ba748691f135b71582dc3292e5e3ed7e13341, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x35917c0eb91d2e21bef40940d028940484230c06",
+    "indexer_sync_percentages": "100%, 100%, 100%, 100%",
+    "indexer_count": 4,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "8629",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "8629",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "8629",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index.tehn.in",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "8327",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 79691,
+    "query_volume_days": 30,
+    "indexers_responding": 4,
+    "indexers_synced": 4,
+    "indexers_healthy": 4,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "6f2Z8rTvsBQinEMwRSBxbyg3BP2LTFiEA1hjPZxmy3xs",
+    "ipfs_hash": "QmZii4t3cRhV4ipMsdkETyeVkCBx41CHxuyfLjVR7zdVRM",
+    "signal_amount": "5611154267186253746153",
+    "active_indexers": "0xf00f7157fa8fd0420b87956d46058a16b2f23adc, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0x0058223c6617cca7ce76fc929ec9724cd43d4542, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51",
+    "indexer_sync_percentages": "99%, 100%, 99%, 99%, 100%, 99%, 99%",
+    "indexer_count": 7,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "35772829",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "35766668",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "35772825",
+        "blocks_behind": 5,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "35772828",
+        "blocks_behind": 2,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "35772830",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service-2.l2.graphinx.grassets.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "35772830",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-booster-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "35772825",
+        "blocks_behind": 5,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 51620,
+    "query_volume_days": 30,
+    "indexers_responding": 7,
+    "indexers_synced": 7,
+    "indexers_healthy": 5,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "Qmbk6v8NrwfVwufk5t9wfoGQMADVymrxLnM6ReQRbDQYfC",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmVJep6HL7r4Z51sTctv9j12sRK7cfnCNgS9JKVdavtb1g",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1333893",
+        "blocks_behind": 64842,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmdChDc6oXUXpt2cHQVMbmPACoqxu6bD2YekxQjFtvvWzh",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1382885",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 132,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmaXrXNZYjCiYZc5CCGr9rc1XzuZaqQtzv2J9zbMEbaz2v",
+    "signal_amount": "1404771861758690449140",
+    "active_indexers": "0x3e1536fc83cd5bed83a521a26034ff3e59c6a7c4, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "100%, 99%, 99%, 100%",
+    "indexer_count": 4,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1384125",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1384517",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1383307",
+        "blocks_behind": 4,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.differentialgraph.xyz",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1384050",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 79249,
+    "query_volume_days": 30,
+    "indexers_responding": 4,
+    "indexers_synced": 4,
+    "indexers_healthy": 4,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmaDUHxBtXhDYJJ7DRXGMGfoq2WqbxP7DQb7ban2mqmyHq",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmbfrofR6f8W38QZQdmLWRTt8uP5SDRwEy7HdiWHVyHEoZ",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmQvx3axMVdsm3EMr6vuvDS2bJSbtNmTpvq5EquRrMJ9dC",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmR5rgva4P1j1ijtet7VFKYDqvJwPhfHiUtQubPA3emYSn",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1341940",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmW2AWcwwpHxYdV11FVD8Eh7UQB8XWUvBMZdrNG5Acip2U",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmSyR8xnaAwGXhAA2DT65HMN5AT2B1AT8DN1R1syehwSLs",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmdLUt6UUgtoRofiqPcpCbLBY5ArawsXTv8zWv19JkrBSp",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "6xozxD3hugFb5Bx8Ej59WCx777TGzFuzeHKnmTRnZD4n",
+    "ipfs_hash": "QmNkpRvjVHc5XStoaDoFuJq79D8VzjBSFwozWj3EAFPzJ6",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1346321",
+        "blocks_behind": 65106,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "71ZkLj7benQXYSTPWQP7Uj3W1QG2AjRmB1xZb4uezaZ8",
+    "ipfs_hash": "QmUeFid4o6di9PL6dCWEJcuLo8hWAjbkNbpHgcVkpY9das",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491, 0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%, 99%",
+    "indexer_count": 2,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "790472",
+        "blocks_behind": 519378,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "790472",
+        "blocks_behind": 519378,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 4,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 2,
+    "indexers_healthy": 2,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "7PCcxpeco1VPmLTAUkM1yRQkocQtYJoo7RLHRDvqaRq",
+    "ipfs_hash": "QmeYmmwMb8YcT3EAcNkf4sm8oqxsmXPqaAE1MDy6PoGzoh",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "16522",
+        "blocks_behind": -1,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 629556,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "82Jfs6YUgbBCCmHycPaYujrrfs1LdbXhdUHF8ryfHfXD",
+    "ipfs_hash": "QmRVtQMStKBEhGFaymiF8eRWNFDrnati1Fw9Cx5WV6esx4",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "800016",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "82Jfs6YUgbBCCmHycPaYujrrfs1LdbXhdUHF8ryfHfXD",
+    "ipfs_hash": "QmVsVgYPTKHBJMxS4w2fGRJSxkv2ZSnBskEgRcxSr642bb",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "82Jfs6YUgbBCCmHycPaYujrrfs1LdbXhdUHF8ryfHfXD",
+    "ipfs_hash": "QmNq943mFmYPbBtvSqfPVsPSxKZHZmgDSsZc9hTCNLe4pq",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "82Jfs6YUgbBCCmHycPaYujrrfs1LdbXhdUHF8ryfHfXD",
+    "ipfs_hash": "QmNQAzgQHAyC44X8vH1AQGnSjGVvLTTDj8P9cfSyQmv8Fs",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "82Jfs6YUgbBCCmHycPaYujrrfs1LdbXhdUHF8ryfHfXD",
+    "ipfs_hash": "QmSqW4hUovD4JHyeLHzybbaeZCosDSP9oPsncVVp7LB7oa",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "791453",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "82Jfs6YUgbBCCmHycPaYujrrfs1LdbXhdUHF8ryfHfXD",
+    "ipfs_hash": "QmY9gALcpGpsaJmduHXv4HscciZ6pks2SAURXG9qXb3Kvd",
+    "signal_amount": "1465010003410943025517",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x35917c0eb91d2e21bef40940d028940484230c06, 0x3b9ba748691f135b71582dc3292e5e3ed7e13341",
+    "indexer_sync_percentages": "100%, 100%, 100%, N/A",
+    "indexer_count": 4,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "793764",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "793764",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "793764",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index.tehn.in",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 79375,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "8e4dRt4P4WHXnKbEq7STaQfU2g99WZ5S4w39f2PcUTjD",
+    "ipfs_hash": "QmXDAaE7sT2bVe4prmZgdSXi34EGRjpULTnF9bKi3qrwFB",
+    "signal_amount": "8472779185237532001475",
+    "active_indexers": "0xfc842f81490dcb37e82d416b2d28327dfb24ba9a, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x9082f497bdc512d08ffde50d6fce28e72c2addcf, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xf00f7157fa8fd0420b87956d46058a16b2f23adc, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51",
+    "indexer_sync_percentages": "99%, 99%, 93%, 93%, 99%, 100%, 100%, 99%",
+    "indexer_count": 8,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "15940245",
+        "blocks_behind": 1,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "15940229",
+        "blocks_behind": 1,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": false,
+        "health": "failed",
+        "entity_count": "1704",
+        "blocks_behind": 762486,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-booster-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": false,
+        "health": "failed",
+        "entity_count": "1704",
+        "blocks_behind": 762486,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.holographic.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "15940256",
+        "blocks_behind": 1,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service-1.l2.graphinx.grassets.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "15940256",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "15939646",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "15940253",
+        "blocks_behind": 2,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 12853573,
+    "query_volume_days": 30,
+    "indexers_responding": 8,
+    "indexers_synced": 6,
+    "indexers_healthy": 6,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "8izmtZD5rDqFUaCZS1F4QAkfNjHtHFC9NPeySS5uBFAc",
+    "ipfs_hash": "QmfCHcDDoqSvVVMVN1F2L8uf2Yetz3jSxsNbCobLrX89vX",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "68062138",
+        "blocks_behind": 0,
+        "network": "avalanche",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 4,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "9TmekCrdTapofV85K3qMDMy2atpohxwrtgDYkY8JS3hL",
+    "ipfs_hash": "QmfT81J8cwSb5yoi7HhrnBa6sqhs9qYYhPjGCKNFH5zLQv",
+    "signal_amount": "9904757928570271888860",
+    "active_indexers": "0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xfc842f81490dcb37e82d416b2d28327dfb24ba9a",
+    "indexer_sync_percentages": "100%, 99%, 99%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "391749300",
+        "blocks_behind": -1,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "391749286",
+        "blocks_behind": 14,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service-1.l2.graphinx.grassets.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "391749295",
+        "blocks_behind": 5,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 165343,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "9WeMybf9o5fGpbKWFzrZz9dQi3YZ5VWrF5v3UyrWN4VP",
+    "ipfs_hash": "QmSuLTQLzHJkrJcLJFsciEiVkr5imuLUB4vz9QFRhaDTK5",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "25%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "1659",
+        "blocks_behind": 25422007,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "25.0%"
+  },
+  {
+    "subgraph_id": "9WeMybf9o5fGpbKWFzrZz9dQi3YZ5VWrF5v3UyrWN4VP",
+    "ipfs_hash": "QmaSvcvCU1uFuBPPFboNAfF56tdrpxNBTQhQvR8cWccoHn",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "9WeMybf9o5fGpbKWFzrZz9dQi3YZ5VWrF5v3UyrWN4VP",
+    "ipfs_hash": "QmRkLi7mXfuWhezpbnpWryCQjSWLAkuxmTwe9oR3WAbq41",
+    "signal_amount": "1788048332033235358817",
+    "active_indexers": "0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0x35917c0eb91d2e21bef40940d028940484230c06, 0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc",
+    "indexer_sync_percentages": "100%, 100%, 99%, 99%, 100%, 99%, N/A, N/A, N/A, N/A, N/A, N/A",
+    "indexer_count": 12,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7075",
+        "blocks_behind": -4,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7075",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7075",
+        "blocks_behind": 8,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7075",
+        "blocks_behind": 4,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7075",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7075",
+        "blocks_behind": 294,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 1463420,
+    "query_volume_days": 30,
+    "indexers_responding": 6,
+    "indexers_synced": 6,
+    "indexers_healthy": 6,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "9a4tXnJu1v5KFnJUinVBvGoE7bAE9pPW8hUC5myE5v3t",
+    "ipfs_hash": "QmZZ7ZWoNnaGjD2Zf4z17nsTWuvaHdWLy3jpzCtH5Ydxrm",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "58%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": false,
+        "health": "failed",
+        "entity_count": "3184",
+        "blocks_behind": 3492723,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "58.0%"
+  },
+  {
+    "subgraph_id": "9a4tXnJu1v5KFnJUinVBvGoE7bAE9pPW8hUC5myE5v3t",
+    "ipfs_hash": "QmQHngyzMVEH96w5BYgmvKvmJNPskA53Ap6fLZJ1vtcBZT",
+    "signal_amount": "1871582688456980106537",
+    "active_indexers": "0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x35917c0eb91d2e21bef40940d028940484230c06, 0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0x9082f497bdc512d08ffde50d6fce28e72c2addcf, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "100%, 100%, 100%, N/A, 100%, N/A, N/A, N/A, N/A, N/A, 100%, 99%, 100%",
+    "indexer_count": 13,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "23696",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "23696",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.holographic.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "23696",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "23696",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "23696",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "22787",
+        "blocks_behind": 48545,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "23696",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 3003347,
+    "query_volume_days": 30,
+    "indexers_responding": 7,
+    "indexers_synced": 7,
+    "indexers_healthy": 7,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "A1fvJWQLBeUAggX2WQTMm3FKjXTekNXo77ZySun4YN2m",
+    "ipfs_hash": "QmZQ2rF1Fsqbo3VbEpMBoB7hitCTGdYqn2CMB4bb3kkEyS",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "A1fvJWQLBeUAggX2WQTMm3FKjXTekNXo77ZySun4YN2m",
+    "ipfs_hash": "QmUwBMokciw5TY5kHYtqMXXuZdymDy2knYpRxHwqiy85od",
+    "signal_amount": "22198623850787286522680",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xedca8740873152ff30a2696add66d1ab41882beb",
+    "indexer_sync_percentages": "98%, 66%",
+    "indexer_count": 2,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "unhealthy",
+        "entity_count": "1789502133",
+        "blocks_behind": 408456,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": false,
+        "health": "unhealthy",
+        "entity_count": "1093174871",
+        "blocks_behind": 13031526,
+        "network": "bsc",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 2536293,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "98.0%"
+  },
+  {
+    "subgraph_id": "AAHFozW6KF553DsmqZkY7SRNLngP3vgrTMig2oxmfmfh",
+    "ipfs_hash": "Qmbbdob8cWX9t6ZHNZoNATrEvTX3ohvSSt7x1hXvUvidKr",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "55%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "80358",
+        "blocks_behind": 168053461,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "55.0%"
+  },
+  {
+    "subgraph_id": "AAHFozW6KF553DsmqZkY7SRNLngP3vgrTMig2oxmfmfh",
+    "ipfs_hash": "QmfK6m6t5BsKQufVqwbAWbTVCrKdot6CzFzptk99dBeR5n",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "N/A",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "AAHFozW6KF553DsmqZkY7SRNLngP3vgrTMig2oxmfmfh",
+    "ipfs_hash": "QmX7qAiM3Cq5jfuNPujr3ycCnduYBsVgPAqfoikZpGmBhs",
+    "signal_amount": "3048159637655392721591",
+    "active_indexers": "0xedca8740873152ff30a2696add66d1ab41882beb, 0x9082f497bdc512d08ffde50d6fce28e72c2addcf, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0x4e5c87772c29381bcabc58c3f182b6633b5a274a, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "100%, 100%, 100%, 99%, 99%, 99%, N/A, 100%, N/A, N/A, N/A",
+    "indexer_count": 11,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://arb-service.thegraph.datanexus.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "442713",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "444663",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.holographic.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "444655",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "444655",
+        "blocks_behind": 4,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "444655",
+        "blocks_behind": 4,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "435762",
+        "blocks_behind": 3468456,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "444654",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 3397782,
+    "query_volume_days": 30,
+    "indexers_responding": 7,
+    "indexers_synced": 7,
+    "indexers_healthy": 7,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "AUpZ47RTWDBpco7YTTffGyRkBJ2i26Ms8dQSkUdxPHGc",
+    "ipfs_hash": "Qma7dRgmwaGyXPYPG8PAB7PhXt3X48TSQAmvmhciz3PDEW",
+    "signal_amount": "7488155642029832797355",
+    "active_indexers": "0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0xfc842f81490dcb37e82d416b2d28327dfb24ba9a, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0xedca8740873152ff30a2696add66d1ab41882beb, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xdeb712db301285ed483ef9e02dd08a1980f273f1",
+    "indexer_sync_percentages": "100%, 100%, 100%, N/A, N/A, N/A, N/A, N/A, N/A",
+    "indexer_count": 9,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "20299989",
+        "blocks_behind": -1,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "20294371",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service-1.l2.graphinx.grassets.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "20299989",
+        "blocks_behind": -1,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 3032668,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "BEj2952gcYgkR5oZ6TJsZtJ8SpBismBdvYJxng3G8SfA",
+    "ipfs_hash": "QmeTEHchTU78r4zyx4piXSzcsEzvSSAH7Zruq1stgu1ZJ7",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "1845784",
+        "blocks_behind": 266,
+        "network": "blast-mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 4,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "BbDEjMEp1gnWZpojp5B52HMG9ktaz4NbZzDq5sQ47VYQ",
+    "ipfs_hash": "QmRSXZ8VUqVZhjxi3zcmwtMV7izcLUT1DgnzAra96Wt1yu",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "BbDEjMEp1gnWZpojp5B52HMG9ktaz4NbZzDq5sQ47VYQ",
+    "ipfs_hash": "QmNNhLFsySMP2NVy234U1PFL7XyFCkKhd5yTwWjHyjWZFX",
+    "signal_amount": "2443941526227799383308",
+    "active_indexers": "0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xedca8740873152ff30a2696add66d1ab41882beb, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51",
+    "indexer_sync_percentages": "100%, 100%, 99%, N/A, 99%, N/A, N/A, N/A, N/A, N/A, 99%, 99%",
+    "indexer_count": 12,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "588909",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "588661",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "588910",
+        "blocks_behind": 4,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "588910",
+        "blocks_behind": 2,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "588910",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "588905",
+        "blocks_behind": 290,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 3588494,
+    "query_volume_days": 30,
+    "indexers_responding": 6,
+    "indexers_synced": 6,
+    "indexers_healthy": 6,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "BsBDqDf6rJJyxKACZrCHAa8Gaf384cmL2hxfLaDuB8XM",
+    "ipfs_hash": "QmWE8UZFMRbab8kFoquyvaCC5FnMpvX2mWPx1PoTVwoanU",
+    "signal_amount": "5209629176223271591567",
+    "active_indexers": "0x4e5c87772c29381bcabc58c3f182b6633b5a274a, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x35917c0eb91d2e21bef40940d028940484230c06",
+    "indexer_sync_percentages": "100%, 99%, 99%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "94047943",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arb-service.thegraph.datanexus.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "94047943",
+        "blocks_behind": 1,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "93984316",
+        "blocks_behind": 1,
+        "network": "optimism",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 175814,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "BsZnuQqE5CEmbfkD1HdcDoB9k7sR7jEZ63qM3CF3TDew",
+    "ipfs_hash": "Qme8JM4E2Wjxtwk2AEQ88zAkYuehWkvfMmxWKfk9MNNCnL",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "58%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "121822",
+        "blocks_behind": 19828631,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "58.0%"
+  },
+  {
+    "subgraph_id": "BsZnuQqE5CEmbfkD1HdcDoB9k7sR7jEZ63qM3CF3TDew",
+    "ipfs_hash": "QmPG8qYnhQHuk4Y6UuyzDkBfM9Bd37AYepvVDbxfL7fdBt",
+    "signal_amount": "4145689736951888978149",
+    "active_indexers": "0xedca8740873152ff30a2696add66d1ab41882beb, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d",
+    "indexer_sync_percentages": "100%, 100%, 94%, 100%, N/A, N/A, N/A, N/A, N/A, 100%, N/A",
+    "indexer_count": 11,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "326189",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "326194",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "303581",
+        "blocks_behind": 2765737,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "326102",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "326189",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 3210058,
+    "query_volume_days": 30,
+    "indexers_responding": 5,
+    "indexers_synced": 5,
+    "indexers_healthy": 4,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "C4cSs45WiwmUqyN7WCR6rFRitEhPEXSKt3uabL2tWinu",
+    "ipfs_hash": "QmaHz1LewqNy1N25x7xWXJLWszdi4hHjVpPCCXhb5MgwwV",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "96%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "813912224",
+        "blocks_behind": 1003386,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 61,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "96.0%"
+  },
+  {
+    "subgraph_id": "CStW6CSQbHoXsgKuVCrk3uShGA4JX3CAzzv2x9zaGf8w",
+    "ipfs_hash": "QmYnp1arinzb7dRn5o36uHa6NqHFWY56ynkfv9pUzyfX7y",
+    "signal_amount": "2485566618100609915445",
+    "active_indexers": "0x9082f497bdc512d08ffde50d6fce28e72c2addcf, 0x8bbe94c2894f76406568dfb44e905dac4b7df699",
+    "indexer_sync_percentages": "99%, 100%",
+    "indexer_count": 2,
+    "indexer_statuses": [
+      {
+        "indexer_url": "http://78.46.61.208:7600",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7124616",
+        "blocks_behind": 1864,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.holographic.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "7124675",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 26854,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 2,
+    "indexers_healthy": 2,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "CjNKWQWqaVc6m1WL3CYSC4npmvG5kWBLmzFwdqCMBDoN",
+    "ipfs_hash": "QmZM7qcyrBwBAKATQ8fBJe1f3dnh4M76afYM2kFqn8KWJQ",
+    "signal_amount": "19408592387970652945752",
+    "active_indexers": "0xeccdf8231326a9c5aad32df76a633aaa4c49b104, 0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xedca8740873152ff30a2696add66d1ab41882beb",
+    "indexer_sync_percentages": "100%, 100%, 23%, 93%",
+    "indexer_count": 4,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11061039",
+        "blocks_behind": -2,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "11061043",
+        "blocks_behind": -8,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": false,
+        "health": "healthy",
+        "entity_count": "1845915",
+        "blocks_behind": 299012577,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.catapulta.su",
+        "status": "success",
+        "synced": false,
+        "health": "unhealthy",
+        "entity_count": "10327934",
+        "blocks_behind": 26718121,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 846905,
+    "query_volume_days": 30,
+    "indexers_responding": 4,
+    "indexers_synced": 2,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "Cwefn7yHSbLw9CqRBRxTyNca9RfErW2Ykimze4rRVcvf",
+    "ipfs_hash": "QmTCeWsn3ibPr7Cp448ft8psuJcgcHg9mWdmqtnRnZj1en",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "Cwefn7yHSbLw9CqRBRxTyNca9RfErW2Ykimze4rRVcvf",
+    "ipfs_hash": "QmRYDoEZCS7N2ar56RihrTcbWyieHtwfNvTgLJgUVnboxg",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "509",
+        "blocks_behind": -1,
+        "network": "unichain",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 16445,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "Cwefn7yHSbLw9CqRBRxTyNca9RfErW2Ykimze4rRVcvf",
+    "ipfs_hash": "QmaxVn3okpNPW4siiuRTXrP6LiaKvYRfgZPN1cD2YwfKuF",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "509",
+        "blocks_behind": 0,
+        "network": "unichain",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 88254,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "DC8eAnu4QNLcWGBNkGNwcFPGXHhdzVEzBMNVMhCw8hHD",
+    "ipfs_hash": "QmfFZ4MqRGzcz2WVrHjYnAJXVi68N5JaRv9EtUkduaM8Wj",
+    "signal_amount": "4963935164445238373231",
+    "active_indexers": "0xfc842f81490dcb37e82d416b2d28327dfb24ba9a, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "100%, 99%",
+    "indexer_count": 2,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "52306980",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service-1.l2.graphinx.grassets.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "52312281",
+        "blocks_behind": 2,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 61077,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 2,
+    "indexers_healthy": 2,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "DHycyhfowfnfdxu7PNQGtzqfHUb8bzgVbgYdSxKFFULX",
+    "ipfs_hash": "QmRzDq76frbJr88N195E66H9aXK3E8bYyRSb2cXWeEEzWn",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "142739826",
+        "blocks_behind": 1,
+        "network": "optimism",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 4,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "DNpAcM1JJKHvy1WoRsHRwnAeJqM24PcqvZt1rZUgkq4i",
+    "ipfs_hash": "QmbTmTRCBQBxmePArDUgnR8XoRu5mhX7qaDjVQGwm6FWKR",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "77%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "12824215",
+        "blocks_behind": 4817659,
+        "network": "optimism",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 7,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "77.0%"
+  },
+  {
+    "subgraph_id": "DTNjoPNU1TiDk1oHVmhz3rBcBbPJjPSqBtg52pRfpH71",
+    "ipfs_hash": "QmX1t2KitqyHqdqgXXP5mNeypGjhrzUJ9qaYyZZAdEqC4G",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "EHktkaDjaqgP39cpmT4F5bnNaeXddA7xUJ21r4qrrZR3",
+    "ipfs_hash": "QmUxUBhNFNWgR6fzLQoSV83LL4MfSSMSy2WcG8mJ9th3sQ",
+    "signal_amount": "0",
+    "active_indexers": "0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0x9082f497bdc512d08ffde50d6fce28e72c2addcf",
+    "indexer_sync_percentages": "100%, 100%",
+    "indexer_count": 2,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.holographic.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "2760",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "2759",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 596653,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 2,
+    "indexers_healthy": 2,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "ENUvnEYFET1LBjw6yDe9c9FwUpYjrrbCfvd6YHgmYzLB",
+    "ipfs_hash": "QmeSjN8NkVy74y3QiKdtKSFQooi7Y7nM7z4AmyoDLgZ5Ve",
+    "signal_amount": "4950181451339150984589",
+    "active_indexers": "0x0058223c6617cca7ce76fc929ec9724cd43d4542, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xf00f7157fa8fd0420b87956d46058a16b2f23adc",
+    "indexer_sync_percentages": "100%, 100%, 99%, 99%, 100%",
+    "indexer_count": 5,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "77986784",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-booster-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "77986838",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service-2.l2.graphinx.grassets.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "77986836",
+        "blocks_behind": 2,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "77986834",
+        "blocks_behind": 4,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "77986839",
+        "blocks_behind": -1,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 1999,
+    "query_volume_days": 30,
+    "indexers_responding": 5,
+    "indexers_synced": 5,
+    "indexers_healthy": 5,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "EXBcAqmvQi6VAnE9X4MNK83LPeA6c1PsGskffbmThoeK",
+    "ipfs_hash": "QmbsvWwE69uV2skDmF5sAkxhRdRftrqJFMWied1VBb2s8d",
+    "signal_amount": "2128787730443658185",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "13825342",
+        "blocks_behind": 76,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 43525,
+    "query_volume_days": 30,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "G5MUbSBM7Nsrm9tH2tGQUiAF4SZDGf2qeo1xPLYjKr7K",
+    "ipfs_hash": "QmaK5sUZwg7CBrxSmEgzgaD6uafQH8RxVRP4dAkPK5JXru",
+    "signal_amount": "8306501806966155285590",
+    "active_indexers": "0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "100%, 63%, N/A, N/A, N/A, N/A, N/A, N/A",
+    "indexer_count": 8,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "345153528",
+        "blocks_behind": 0,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": false,
+        "health": "healthy",
+        "entity_count": "132601376",
+        "blocks_behind": 14259377,
+        "network": "bsc",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 8615367,
+    "query_volume_days": 30,
+    "indexers_responding": 2,
+    "indexers_synced": 1,
+    "indexers_healthy": 2,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "GENunSHWLBXm59mBSgPzQ8metBEp9YDfdqwFr91Av1UM",
+    "ipfs_hash": "QmQ7r2fVYMGHdrM5EVBPP72JjBA7xs88Y8upJzuXAUEczL",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GENunSHWLBXm59mBSgPzQ8metBEp9YDfdqwFr91Av1UM",
+    "ipfs_hash": "QmasYjypV6nTLp4iNH4Vjf7fksRNxAkAskqDdKf2DCsQkV",
+    "signal_amount": "29951907058374587754115",
+    "active_indexers": "0xfeff9093f6b32d0e5cddba743b06a1fedb87c004, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xe13840a2e92e0cb17a246609b432d0fa2e418774",
+    "indexer_sync_percentages": "99%, 99%, 99%, 98%, 99%, 95%, 99%",
+    "indexer_count": 7,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "558528685",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "558757466",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "unhealthy",
+        "entity_count": "557730948",
+        "blocks_behind": 2,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "529764110",
+        "blocks_behind": 433246,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "558500066",
+        "blocks_behind": 6424,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": false,
+        "health": "healthy",
+        "entity_count": "481754110",
+        "blocks_behind": 1129842,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.grt.pops.one",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "558884751",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 39317339,
+    "query_volume_days": 30,
+    "indexers_responding": 7,
+    "indexers_synced": 6,
+    "indexers_healthy": 6,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "GPm81PyNJkSx8oiQFm1UppW4tBHHXtNhNQQfhUmC4f54",
+    "ipfs_hash": "QmWjKNumtifvt5SizvjHHE8wA4R1qZU7ziG9jbnNBc4nkL",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GPm81PyNJkSx8oiQFm1UppW4tBHHXtNhNQQfhUmC4f54",
+    "ipfs_hash": "QmVu1bm1cymnMJHTgZGCH6G5eVu5EWCP85UY8UPSLVs16u",
+    "signal_amount": "3842305596631820710478",
+    "active_indexers": "0xf00f7157fa8fd0420b87956d46058a16b2f23adc, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0xedca8740873152ff30a2696add66d1ab41882beb, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e",
+    "indexer_sync_percentages": "100%, 100%, 99%, 99%, N/A, 99%, N/A, N/A, N/A, N/A",
+    "indexer_count": 10,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "413227",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "413625",
+        "blocks_behind": 0,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "413625",
+        "blocks_behind": 4,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "413625",
+        "blocks_behind": 4,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://is-booster-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "413625",
+        "blocks_behind": 4,
+        "network": "optimism",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 2873836,
+    "query_volume_days": 30,
+    "indexers_responding": 5,
+    "indexers_synced": 5,
+    "indexers_healthy": 5,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmS4MsW21egG6wh2hpvV6KEguMKcWhCyREuuHJjc5zat9W",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "45873",
+        "blocks_behind": 1,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmT3ScrDJo7GH7m8KZiadW5ZdQLBP6hjyLSEwnYvHTuDdy",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmQs2nXe9B5DVB3krk6ihc5tbVxKAjX2xoEFSfPq37qaqA",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmT8EmzW7fD6TFdgFNs38bkm7X5R8tgawnsLv3hRPXaK2R",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmXj8vd1Rq1LGNVNKK6BWR5RWHoY6y1Apgrms91eobsy5i",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmVSaMw6Vj77HxhG3JNrXmDs3efvR6Q6N5MhQNvEUsmP6D",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "100%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "38374",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "QmcUEqk2G48RigtgcZy7uS57Vpa5yJbbcjEE172dYoi555",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GaApRV2cmGYke3zioYHEkRZGrXxuwVftyoysDv2ZUVai",
+    "ipfs_hash": "Qmb8pLxniKrhNf2rp8aQsjT98xmgjPzwanqqzsGwV4bxZV",
+    "signal_amount": "958020153306605722145",
+    "active_indexers": "0x35917c0eb91d2e21bef40940d028940484230c06, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xf92f430dd8567b0d466358c79594ab58d919a6d4",
+    "indexer_sync_percentages": "99%, 100%, 100%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "44544",
+        "blocks_behind": 2,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "44548",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "44530",
+        "blocks_behind": 0,
+        "network": "mainnet",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 79378,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 3,
+    "indexers_healthy": 3,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "GcDDLJEtTNdeUi72naM6izzQYajDLUDDdDr8iXwitf7v",
+    "ipfs_hash": "QmRbn71wTNK3PmEb62wUK4G1XmKN14ZbHeTgi5JubL7evA",
+    "signal_amount": "10886431373401058210635",
+    "active_indexers": "0x9da1017766bfeb2835db4f811516eea68996538b, 0xa181d0f242b3730f8a244cc94eda05faf17a43e8, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x6f9bb7e454f5b3eb2310343f0e99269dc2bb8a1d, 0x0fd8fd1dc8162148cb9413062fe6c6b144335dbf, 0xfeff9093f6b32d0e5cddba743b06a1fedb87c004, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0x2f09092aacd80196fc984908c5a9a7ab3ee4f1ce, 0xdecba5154aab37ae5e381a19f804f3af4d1bcbb5, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x35917c0eb91d2e21bef40940d028940484230c06",
+    "indexer_sync_percentages": "100%, 99%, 99%, 99%, 100%, 99%, 99%, 98%, 99%, 100%, 100%, 100%, 100%, 99%",
+    "indexer_count": 14,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://is-big-arbitrum.graph.p2p.org",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 4,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-2.thegraph.datanexus.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arb.protofire-thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.decisionbasis.cc",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "28854",
+        "blocks_behind": 6047,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.grt.pops.one",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28793",
+        "blocks_behind": 433257,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://cp0x-arbitrum.ryabina.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": -1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph-arbitrum.ryabina.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": -1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": -1,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 0,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "28854",
+        "blocks_behind": 295,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 29555291,
+    "query_volume_days": 30,
+    "indexers_responding": 14,
+    "indexers_synced": 14,
+    "indexers_healthy": 13,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "GqzP4Xaehti8KSfQmv3ZctFSjnSUYZ4En5NRsiTbvZpz",
+    "ipfs_hash": "QmTTXzn6iBcAX2Z72yJw6e64yfCX6c5HcTpKaRacfTLa7g",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "GqzP4Xaehti8KSfQmv3ZctFSjnSUYZ4En5NRsiTbvZpz",
+    "ipfs_hash": "QmVeyHjXivX8mY7bzWdbHDyA5z9ojgJdTu6uwFJsJvUzYR",
+    "signal_amount": "34917742383820183994200",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xedca8740873152ff30a2696add66d1ab41882beb",
+    "indexer_sync_percentages": "76%, 81%, 76%",
+    "indexer_count": 3,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": false,
+        "health": "healthy",
+        "entity_count": "367933105",
+        "blocks_behind": 8333936,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "516931090",
+        "blocks_behind": 6490653,
+        "network": "base",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "370942077",
+        "blocks_behind": 8260370,
+        "network": "base",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 783547,
+    "query_volume_days": 30,
+    "indexers_responding": 3,
+    "indexers_synced": 2,
+    "indexers_healthy": 2,
+    "sync_percentage": "81.0%"
+  },
+  {
+    "subgraph_id": "HMcqgvDY6f4MpnRSJqUUsBPHePj8Hq3AxiDBfDUrWs15",
+    "ipfs_hash": "QmPZWGqgbPVDBAkjJ2BCRT7S7GuMRaHWwszCgQNqALJiFW",
+    "signal_amount": "990000000000000000",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "97%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "37975966",
+        "blocks_behind": 1255738,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 0,
+    "sync_percentage": "97.0%"
+  },
+  {
+    "subgraph_id": "HMcqgvDY6f4MpnRSJqUUsBPHePj8Hq3AxiDBfDUrWs15",
+    "ipfs_hash": "QmQob1PdrSQ4fUz4Lg93wMUmPek3mBKYdB7nPUbqSJ5jfj",
+    "signal_amount": "12086949427169185782089",
+    "active_indexers": "0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc, 0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xedca8740873152ff30a2696add66d1ab41882beb",
+    "indexer_sync_percentages": "99%, 100%, 100%, N/A, N/A, N/A, 85%, N/A, N/A, N/A",
+    "indexer_count": 10,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "38630437",
+        "blocks_behind": 3117,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "unhealthy",
+        "entity_count": "38632353",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "38632727",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "34219066",
+        "blocks_behind": 7813106,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 4797584,
+    "query_volume_days": 30,
+    "indexers_responding": 4,
+    "indexers_synced": 4,
+    "indexers_healthy": 2,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "J42yJrC3wPGkr79r7MmKUHvCSN9JBdtYyWAfJr49AJfE",
+    "ipfs_hash": "QmYd6n4jxpid6zim3kkQ3WL5ecDb87QCZMup48bk2ZmRqD",
+    "signal_amount": "5616590115279596673804",
+    "active_indexers": "0xedca8740873152ff30a2696add66d1ab41882beb, 0xe13840a2e92e0cb17a246609b432d0fa2e418774, 0xdecba5154aab37ae5e381a19f804f3af4d1bcbb5, 0x35917c0eb91d2e21bef40940d028940484230c06, 0x920fdeb00ee04dd72f62d8a8f80f13c82ef76c1e, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x4e5c87772c29381bcabc58c3f182b6633b5a274a, 0x1b7e0068ca1d7929c8c56408d766e1510e54d98d, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xfeff9093f6b32d0e5cddba743b06a1fedb87c004",
+    "indexer_sync_percentages": "100%, 100%, 100%, 99%, 100%, 99%, 100%, 99%, 100%, 99%",
+    "indexer_count": 10,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://arb-service.thegraph.datanexus.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 1,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://thegraph.lunanova.tech",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 1,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.braindexer.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.decisionbasis.cc",
+        "status": "success",
+        "synced": true,
+        "health": "failed",
+        "entity_count": "3480",
+        "blocks_behind": 14788,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbindex.grt.pops.one",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 0,
+        "network": "matic",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://service.thegraph.suntzu.dev",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "3480",
+        "blocks_behind": 2,
+        "network": "matic",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 7531650,
+    "query_volume_days": 30,
+    "indexers_responding": 10,
+    "indexers_synced": 10,
+    "indexers_healthy": 9,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "QmVfjqaZ3yZRgDAAqXrxzzd1A2DACMJjN8T729jyMU4csG",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "QmVbLuED7mepjRSMFPav5CosYfSXu7ZCqt8gRRcX3cwMNA",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "QmZu946JYcYo4s3wamCyhKUu9E6sjpVAWG7jZx25WF7JQa",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "63%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": false,
+        "health": "failed",
+        "entity_count": "237220",
+        "blocks_behind": 135903810,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "63.0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "QmQvRciTvcduf8Q27FrmnGJM2QKG8feQ4CXRxmJ846LKHb",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "63%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": false,
+        "health": "failed",
+        "entity_count": "237220",
+        "blocks_behind": 135903813,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "63.0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "Qme137aNvH1zE5doBKpxi4fE3PeiGPgRC8oCnncsDHHyU9",
+    "signal_amount": "0",
+    "active_indexers": "None",
+    "indexer_sync_percentages": "None",
+    "indexer_count": 0,
+    "indexer_statuses": [],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 0,
+    "indexers_synced": 0,
+    "indexers_healthy": 0,
+    "sync_percentage": "0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "QmcdRunXPxaUbyLcPok6PqbfMUU5zbshWGMBTZzMvEjVYG",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "867702",
+        "blocks_behind": 10,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "Qmf2eRZEmg9BYo98bGVdg4MEFSuohajYT5WWjkb8wsicmA",
+    "signal_amount": "0",
+    "active_indexers": "0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491",
+    "indexer_sync_percentages": "99%",
+    "indexer_count": 1,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.upgrade.thegraph.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "877418",
+        "blocks_behind": 4,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 0,
+    "query_volume_days": 0,
+    "indexers_responding": 1,
+    "indexers_synced": 1,
+    "indexers_healthy": 1,
+    "sync_percentage": "99.0%"
+  },
+  {
+    "subgraph_id": "J8e3FPp5ixbWhk6bosKZkyMzynszpzvHKMd3kLmKZEYn",
+    "ipfs_hash": "QmQFHpwKF1ucUDx18dSsxbtasrir3y4AVEmoWdx4omsomz",
+    "signal_amount": "1435757556013696878109",
+    "active_indexers": "0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0x3e1536fc83cd5bed83a521a26034ff3e59c6a7c4, 0x35917c0eb91d2e21bef40940d028940484230c06",
+    "indexer_sync_percentages": "99%, 100%, 100%, 99%",
+    "indexer_count": 4,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://indexer.streamingfast.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "885680",
+        "blocks_behind": 1,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "885678",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "885680",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://index-main.differentialgraph.xyz",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "885629",
+        "blocks_behind": 4220,
+        "network": "arbitrum-one",
+        "error": ""
+      }
+    ],
+    "query_volume_30d": 79387,
+    "query_volume_days": 30,
+    "indexers_responding": 4,
+    "indexers_synced": 4,
+    "indexers_healthy": 4,
+    "sync_percentage": "100.0%"
+  },
+  {
+    "subgraph_id": "URCsppYRN4PWXcSCftjmsb3bguKEDG4SZbJFuKLZcyC",
+    "ipfs_hash": "QmPb43N1Hbc3vaSr9hoLmATs14aK9iPk5erhDsjQxrE1Bu",
+    "signal_amount": "19775123927411466605243",
+    "active_indexers": "0xdeb712db301285ed483ef9e02dd08a1980f273f1, 0xedca8740873152ff30a2696add66d1ab41882beb, 0x9da1017766bfeb2835db4f811516eea68996538b, 0x6f3ce93a09f30f18d728d2364268b5fe9444b89e, 0xf92f430dd8567b0d466358c79594ab58d919a6d4, 0xdec965f0604125be05cd8a136c85d02ef344d61a, 0x7bb834017672b1135466661d8dd69c5dd0b3bf51, 0xaa988dcb035518bc0e20082a3148a5d3dfd1776d, 0x3f74870f80ff7449fe4c6ff257da5fa72734c970, 0x326c584e0f0eab1f1f83c93cc6ae1acc0feba0bc",
+    "indexer_sync_percentages": "100%, 99%, 99%, N/A, N/A, 99%, N/A, N/A, N/A, N/A",
+    "indexer_count": 10,
+    "indexer_statuses": [
+      {
+        "indexer_url": "https://graph-l2prod.ellipfra.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "338495",
+        "blocks_behind": 0,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://arbitrum.graph.pinax.network",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "338498",
+        "blocks_behind": 1,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://graphprodl2.0xcryptovestor.com",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "338497",
+        "blocks_behind": 4,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbijumbo.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbititan.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://thegraph-arbitrum.ryabina.io",
+        "status": "success",
+        "synced": true,
+        "health": "healthy",
+        "entity_count": "338497",
+        "blocks_behind": 5,
+        "network": "arbitrum-one",
+        "error": ""
+      },
+      {
+        "indexer_url": "https://indexer-arbiencode.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbie2s.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbigiga.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      },
+      {
+        "indexer_url": "https://indexer-arbinauts.stakesquid.com",
+        "status": "error",
+        "synced": false,
+        "health": "",
+        "entity_count": "",
+        "blocks_behind": 0,
+        "network": "",
+        "error": "No status data available"
+      }
+    ],
+    "query_volume_30d": 1010959,
+    "query_volume_days": 30,
+    "indexers_responding": 4,
+    "indexers_synced": 4,
+    "indexers_healthy": 4,
+    "sync_percentage": "100.0%"
+  }
+]
