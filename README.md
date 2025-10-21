@@ -13,6 +13,7 @@ A Python script that analyzes subgraph deployments for a given wallet address on
 - **Query Volume Analysis**: Fetches 30-day query volume data for each subgraph
 - **Data Export**: Exports results to CSV format
 - **Issue Detection**: Identifies subgraphs with sync issues or problems
+- **Web Interface**: Modern Next.js dashboard for interactive analysis and visualization
 
 ## Prerequisites
 
@@ -86,6 +87,8 @@ hardcoded_key = "your_api_key_here"
 
 ## Usage
 
+### Command Line Interface
+
 1. **Activate the virtual environment**
 
    ```bash
@@ -107,7 +110,36 @@ hardcoded_key = "your_api_key_here"
    Enter the Wallet Address to check subgraphs for (e.g., 0xa4c6a8392f046332628f33fd9891a7006b05cc95):
    ```
 
-4. **Wait for analysis**
+### Web Interface
+
+1. **Navigate to the web directory**:
+
+   ```bash
+   cd web
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser** to [http://localhost:3000](http://localhost:3000)
+
+5. **Enter a wallet address** and click "Analyze Subgraphs" to run the analysis with a modern web interface featuring:
+
+   - Interactive dashboards
+   - Data visualization charts
+   - Sortable tables
+   - Real-time progress updates
+
+6. **Wait for analysis**
    The script will:
    - Fetch all subgraphs for the given address
    - Check each version's active indexers

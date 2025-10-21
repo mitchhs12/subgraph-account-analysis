@@ -116,16 +116,6 @@ class SubgraphData:
     subgraph_features: SubgraphFeatures
     indexing_statuses: List[IndexingStatus]
 
-def get_status_url(local: bool = False) -> str:
-    """
-    Get the status URL for querying subgraph status.
-    """
-    if local:
-        return "http://localhost:8030/graphql"
-    
-    # Default to upgrade indexer URL
-    return "https://indexer.upgrade.thegraph.com/status"
-
 def get_subgraph_status(url: str, deployment_id: str) -> Optional[SubgraphData]:
     """
     Get detailed subgraph status using GraphQL query.
@@ -295,8 +285,10 @@ def get_query_volume_30d(deployment_id: str) -> Optional[Dict]:
         if response.status_code == 200:
             data = response.json()
             if 'count' in data and 'numDays' in data:
+                count = data['count']
+                print(f"    Query volume raw data for {deployment_id}: {count} (type: {type(count)})")
                 return {
-                    'query_volume_30d': data['count'],
+                    'query_volume_30d': count,
                     'query_volume_days': data['numDays']
                 }
     except Exception as error:
@@ -612,13 +604,24 @@ def process_subgraph_version(version_data: Dict, subgraph_id: str, version_idx: 
         Dict containing the row data for this version
     """
     deployment = version_data['subgraphDeployment']
+    version = version_data['version']
     ipfs_hash = deployment['ipfsHash']
     signalled_tokens = deployment['signalledTokens']
     indexer_allocations = deployment['indexerAllocations']
     
     # Get active indexers (for reference, but we'll use progress API data)
     indexer_ids = [alloc['indexer']['id'] for alloc in indexer_allocations]
-    indexer_urls = [alloc['indexer']['url'] for alloc in indexer_allocations if alloc['indexer'].get('url')]
+    # Get indexer URLs from GraphQL response
+    indexer_urls = []
+    for alloc in indexer_allocations:
+        url = alloc['indexer'].get('url', '')
+        if url:
+            # Use the URL directly from the GraphQL response
+            indexer_urls.append(url)
+        else:
+            # If no URL provided, construct one from the indexer ID
+            indexer_id = alloc['indexer']['id']
+            indexer_urls.append(f"https://{indexer_id}.eth")
     indexers_str = ', '.join(indexer_ids) if indexer_ids else 'None'
     
     # Log version processing
@@ -643,12 +646,17 @@ def process_subgraph_version(version_data: Dict, subgraph_id: str, version_idx: 
     progress_indexer_ids = [status.get('indexer_id', '') for status in indexer_statuses if status.get('indexer_id')]
     progress_indexers_str = ', '.join(progress_indexer_ids) if progress_indexer_ids else 'None'
     
+    # Use indexer URLs from GraphQL indexerAllocations (not progress API)
+    indexer_urls_str = ', '.join(indexer_urls) if indexer_urls else 'None'
+    
     # Create a row for this subgraph-IPFS combination
     row = {
         'subgraph_id': subgraph_id,
+        'version': version,
         'ipfs_hash': ipfs_hash,
         'signal_amount': signalled_tokens,
         'active_indexers': progress_indexers_str,  # Use indexers from progress data
+        'indexer_urls': indexer_urls_str,  # Use indexer URLs from GraphQL indexerAllocations
         'indexer_sync_percentages': sync_percentages_str,
         'indexer_count': len(indexer_statuses),  # Use count from progress data
         'indexer_statuses': indexer_statuses
@@ -684,6 +692,7 @@ def process_subgraph_version(version_data: Dict, subgraph_id: str, version_idx: 
             
             if numeric_percentages:
                 highest_sync_pct = f"{max(numeric_percentages):.1f}%"
+                synced_count = sum(1 for val in numeric_percentages if val >= 100.0)
         
         row.update({
             'indexers_responding': len(successful_statuses),
@@ -843,6 +852,12 @@ total_query_volume = df['query_volume_30d'].sum()
 subgraphs_with_queries = len(df[df['query_volume_30d'] > 0])
 print(f"Total 30-day query volume: {total_query_volume:,}")
 print(f"Subgraphs with query volume: {subgraphs_with_queries}")
+
+# Debug: Show individual query volumes
+print("\nDebug - Individual query volumes:")
+for idx, row in df.iterrows():
+    if row['query_volume_30d'] > 0:
+        print(f"  {row['ipfs_hash'][:12]}...: {row['query_volume_30d']:,} (type: {type(row['query_volume_30d'])})")
 
 # Show indexer status summary
 total_indexers = df['indexer_count'].sum()
