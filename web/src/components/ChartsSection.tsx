@@ -368,7 +368,9 @@ export default function ChartsSection({ data }: ChartsSectionProps) {
               <div className="text-2xl font-bold text-orange-600">
                 {summary.total_query_volume.toLocaleString()}
               </div>
-              <div className="text-sm text-muted-foreground">Total Queries</div>
+              <div className="text-sm text-muted-foreground">
+                Total Queries (30D)
+              </div>
             </div>
           </div>
         </CardContent>

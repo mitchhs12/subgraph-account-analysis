@@ -190,7 +190,7 @@ export default function SubgraphTable({ data }: SubgraphTableProps) {
               className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider"
               style={{ width: "14%" }}
             >
-              Actions
+              Details
             </th>
           </tr>
         </thead>
