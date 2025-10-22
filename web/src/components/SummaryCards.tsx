@@ -1,11 +1,4 @@
-import {
-  BarChart3,
-  Users,
-  CheckCircle,
-  AlertTriangle,
-  Clock,
-  TrendingUp,
-} from "lucide-react";
+import { BarChart3, Users, CheckCircle, Clock, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface SummaryCardsProps {

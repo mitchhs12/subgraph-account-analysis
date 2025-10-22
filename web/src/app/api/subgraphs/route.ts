@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
           ipfsHash: ver.subgraphDeployment.ipfsHash,
           signalAmount: ver.subgraphDeployment.signalledTokens,
           allocations: ver.subgraphDeployment.indexerAllocations.map(
-            (alloc) => ({
+            (alloc: { indexer: { id: string; url?: string } }) => ({
               indexer: {
                 id: alloc.indexer.id,
                 url: alloc.indexer.url || null,

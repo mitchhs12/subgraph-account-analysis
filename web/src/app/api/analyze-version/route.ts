@@ -13,12 +13,46 @@ function getSyncPercentage(
   return `${Math.min(synced, 100)}%`;
 }
 
+interface ChainData {
+  chainHeadBlock: { number: string };
+  latestBlock: { number: string };
+  earliestBlock: { number: string };
+  network: string;
+}
+
+interface IndexerData {
+  user: string;
+  health: string;
+  synced: boolean;
+  userImage: string;
+  userEns: string;
+  chains: ChainData[];
+}
+
 interface ProgressData {
-  progress: any[];
+  progress: IndexerData[];
+}
+
+interface IndexerStatus {
+  indexer_url: string;
+  indexer_id: string;
+  status: string;
+  synced: boolean;
+  health: string;
+  entity_count: string;
+  paused: boolean;
+  node: string;
+  latest_block?: number;
+  chain_head_block?: number;
+  earliest_block?: number;
+  blocks_behind?: number;
+  network?: string;
+  user_image?: string;
+  user_ens?: string;
 }
 
 interface ParsedProgress {
-  indexerStatuses: any[];
+  indexerStatuses: IndexerStatus[];
   indexerSyncPercentages: string[];
 }
 
@@ -26,7 +60,7 @@ function parseProgressData(
   progressData: ProgressData,
   startBlock: number
 ): ParsedProgress {
-  const indexerStatuses: any[] = [];
+  const indexerStatuses: IndexerStatus[] = [];
   const indexerSyncPercentages: string[] = [];
   for (const indexerData of progressData.progress) {
     const userAddress = indexerData.user || "";
@@ -35,7 +69,7 @@ function parseProgressData(
     const userImage = indexerData.userImage || "";
     const userEns = indexerData.userEns || "";
     const chains = indexerData.chains || [];
-    let status: any;
+    let status: IndexerStatus;
     if (chains.length > 0) {
       const chain = chains[0];
       const chainHeadBlock = parseInt(chain.chainHeadBlock.number);
@@ -158,7 +192,7 @@ export async function GET(request: NextRequest) {
   const queryVolumeData =
     queryVolumeRes.status === "fulfilled" ? queryVolumeRes.value : null;
   // Parse progress
-  let indexerStatuses: any[] = [];
+  let indexerStatuses: IndexerStatus[] = [];
   let indexerSyncPercentages: string[] = [];
   if (progressData && progressData.progress) {
     const parsed = parseProgressData(progressData, startBlock);
@@ -177,14 +211,16 @@ export async function GET(request: NextRequest) {
     queryVolumeDays = queryVolumeData.numDays || 0;
   }
   // Compute indexer_urls_str
-  const indexerUrls = allocations.map((alloc: any) => {
-    const url = alloc.indexer.url;
-    if (url) {
-      return url.replace(/\/$/, "");
-    } else {
-      return `https://${alloc.indexer.id}.eth`;
+  const indexerUrls = allocations.map(
+    (alloc: { indexer: { url?: string; id: string } }) => {
+      const url = alloc.indexer.url;
+      if (url) {
+        return url.replace(/\/$/, "");
+      } else {
+        return `https://${alloc.indexer.id}.eth`;
+      }
     }
-  });
+  );
   const indexerUrlsStr =
     indexerUrls.length > 0 ? indexerUrls.join(", ") : "None";
   // Compute progress_indexers_str

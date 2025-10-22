@@ -80,20 +80,6 @@ export default function ChartsSection({ data }: ChartsSectionProps) {
     }
   };
 
-  // Custom label component for pie chart
-  const CustomLabel = ({ x, y, value }: any) => (
-    <text
-      x={x}
-      y={y}
-      fill={textColor}
-      textAnchor="middle"
-      dominantBaseline="central"
-      fontSize={12}
-    >
-      {value}
-    </text>
-  );
-
   // Prepare data for charts
   const syncStatusData = subgraphs.reduce((acc, subgraph) => {
     const syncPercentage = parseFloat(

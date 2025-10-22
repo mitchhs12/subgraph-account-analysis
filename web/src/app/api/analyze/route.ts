@@ -3,6 +3,7 @@ import { spawn } from "child_process";
 import path from "path";
 import fs from "fs";
 import csv from "csv-parser";
+import { SubgraphData } from "@/types/subgraph";
 
 export async function POST(request: NextRequest) {
   try {
@@ -93,10 +94,26 @@ function runPythonScript(
 async function parseCsvOutput(
   csvPath: string,
   problematicCsvPath: string
-): Promise<any> {
+): Promise<{
+  subgraphs: SubgraphData[];
+  summary: {
+    total_subgraphs: number;
+    total_versions: number;
+    total_query_volume: number;
+    subgraphs_with_queries: number;
+    total_indexers: number;
+    responding_indexers: number;
+    synced_indexers: number;
+    healthy_indexers: number;
+    processing_time: number;
+  };
+  top_by_signal: SubgraphData[];
+  top_by_queries: SubgraphData[];
+  problematic_subgraphs: SubgraphData[];
+}> {
   try {
     // Parse CSV with proper handling of quoted fields
-    const subgraphs: any[] = [];
+    const subgraphs: SubgraphData[] = [];
 
     await new Promise((resolve, reject) => {
       fs.createReadStream(csvPath)
@@ -118,7 +135,7 @@ async function parseCsvOutput(
     });
 
     // Read problematic subgraphs if they exist
-    let problematicSubgraphs: any[] = [];
+    const problematicSubgraphs: SubgraphData[] = [];
     if (fs.existsSync(problematicCsvPath)) {
       await new Promise((resolve, reject) => {
         fs.createReadStream(problematicCsvPath)

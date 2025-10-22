@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Search,
-  BarChart3,
-  AlertTriangle,
-  CheckCircle,
-  Clock,
-  Users,
-  RefreshCw,
-} from "lucide-react";
+import { Search, BarChart3, AlertTriangle, RefreshCw } from "lucide-react";
 import SubgraphTable from "@/components/SubgraphTable";
 import SummaryCards from "@/components/SummaryCards";
 import ChartsSection from "@/components/ChartsSection";
@@ -22,8 +14,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { SubgraphData, AnalysisResult } from "@/types/subgraph";
+
+interface VersionData {
+  subgraphId: string;
+  version: number;
+  ipfsHash: string;
+  signalAmount: string;
+  allocations: Array<{
+    indexer: {
+      id: string;
+      url: string | null;
+    };
+  }>;
+}
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState("");
@@ -32,7 +36,7 @@ export default function Home() {
     null
   );
   const [error, setError] = useState<string | null>(null);
-  const [cache, setCache] = useState<Map<string, AnalysisResult>>(new Map());
+  const [cache] = useState<Map<string, AnalysisResult>>(new Map());
 
   const handleAnalyze = async () => {
     if (!walletAddress.trim()) {
@@ -63,7 +67,7 @@ export default function Home() {
 
       // Pre-fetch all manifests concurrently to get start blocks
       console.log(`Pre-fetching manifests for ${versions.length} versions...`);
-      const manifestPromises = versions.map(async (v: any) => {
+      const manifestPromises = versions.map(async (v: VersionData) => {
         try {
           const manifestRes = await Promise.race([
             fetch(`https://api.thegraph.com/ipfs/api/v0/cat?arg=${v.ipfsHash}`),
@@ -96,7 +100,12 @@ export default function Home() {
             version: number;
             ipfsHash: string;
             signalAmount: string;
-            allocations: any[];
+            allocations: Array<{
+              indexer: {
+                id: string;
+                url: string | null;
+              };
+            }>;
           },
           index: number
         ) =>
@@ -214,7 +223,7 @@ export default function Home() {
 
       // Pre-fetch all manifests concurrently to get start blocks
       console.log(`Pre-fetching manifests for ${versions.length} versions...`);
-      const manifestPromises = versions.map(async (v: any) => {
+      const manifestPromises = versions.map(async (v: VersionData) => {
         try {
           const manifestRes = await Promise.race([
             fetch(`https://api.thegraph.com/ipfs/api/v0/cat?arg=${v.ipfsHash}`),
@@ -247,7 +256,12 @@ export default function Home() {
             version: number;
             ipfsHash: string;
             signalAmount: string;
-            allocations: any[];
+            allocations: Array<{
+              indexer: {
+                id: string;
+                url: string | null;
+              };
+            }>;
           },
           index: number
         ) =>

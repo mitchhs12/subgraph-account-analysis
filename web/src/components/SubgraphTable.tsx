@@ -339,7 +339,6 @@ export default function SubgraphTable({ data }: SubgraphTableProps) {
                               subgraph.indexer_sync_percentages.split(", ");
                             const indexerUrls =
                               subgraph.indexer_urls.split(", ");
-                            const totalIndexers = indexers.length;
 
                             // Create array of indexer objects with their properties
                             const indexerData = indexers.map((indexer, idx) => {
@@ -413,7 +412,6 @@ export default function SubgraphTable({ data }: SubgraphTableProps) {
                                 indexerUrl,
                                 idx,
                                 syncPercentage,
-                                syncValue,
                                 isFullySynced,
                                 isHealthy,
                               }) => (
