@@ -458,7 +458,7 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex items-end">
+                <div className="flex flex-col sm:flex-row gap-2 w-auto items-center justify-center sm:justify-end sm:items-end">
                   <Button
                     variant="outline"
                     onClick={() =>
@@ -466,14 +466,14 @@ export default function Home() {
                         "0xa4c6a8392f046332628f33fd9891a7006b05cc95"
                       )
                     }
-                    className="h-12 px-4 text-sm mr-2 cursor-pointer"
+                    className="h-12 px-4 text-sm cursor-pointer w-full sm:w-auto"
                   >
                     Use Example Wallet
                   </Button>
                   <Button
                     onClick={handleAnalyze}
                     disabled={isLoading}
-                    className="h-12 px-6 cursor-pointer"
+                    className="h-12 px-6 cursor-pointer w-full sm:w-auto"
                   >
                     {isLoading ? (
                       <>

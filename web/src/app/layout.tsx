@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Graph Network Subgraph Analysis",
-  description: "Analyze subgraph performance, indexer status, and query volume",
+  title: "Graph Network Account Analysis",
+  description:
+    "Analyze Graph Network account subgraphs performance, indexer status, and query volume",
 };
 
 export default function RootLayout({
