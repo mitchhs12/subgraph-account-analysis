@@ -32,6 +32,7 @@ export default function Home() {
     null
   );
   const [error, setError] = useState<string | null>(null);
+  const [cache, setCache] = useState<Map<string, AnalysisResult>>(new Map());
 
   const handleAnalyze = async () => {
     if (!walletAddress.trim()) {
@@ -39,25 +40,153 @@ export default function Home() {
       return;
     }
 
+    const trimmedAddress = walletAddress.trim();
+
+    // Check cache first
+    if (cache.has(trimmedAddress)) {
+      setAnalysisResult(cache.get(trimmedAddress)!);
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
     setAnalysisResult(null);
-
     try {
-      const response = await fetch("/api/analyze", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ walletAddress: walletAddress.trim() }),
+      const subgraphsRes = await fetch(
+        `/api/subgraphs?account=${encodeURIComponent(walletAddress.trim())}`
+      );
+      if (!subgraphsRes.ok) {
+        const err = await subgraphsRes.json();
+        throw new Error(err.error || "Failed to fetch subgraphs");
+      }
+      const { versions } = await subgraphsRes.json();
+
+      // Pre-fetch all manifests concurrently to get start blocks
+      console.log(`Pre-fetching manifests for ${versions.length} versions...`);
+      const manifestPromises = versions.map(async (v: any) => {
+        try {
+          const manifestRes = await Promise.race([
+            fetch(`https://api.thegraph.com/ipfs/api/v0/cat?arg=${v.ipfsHash}`),
+            new Promise<never>((_, reject) =>
+              setTimeout(() => reject(new Error("Manifest timeout")), 2000)
+            ),
+          ]);
+
+          if (manifestRes.ok) {
+            const manifest = await manifestRes.text();
+            const matches = [...manifest.matchAll(/startBlock:\s*(\d+)/g)];
+            if (matches.length > 0) {
+              return Math.min(...matches.map((m) => parseInt(m[1])));
+            }
+          }
+        } catch (error) {
+          console.warn(`Failed to fetch manifest for ${v.ipfsHash}:`, error);
+        }
+        return 0; // Default start block
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to analyze subgraphs");
-      }
+      const startBlocks = await Promise.all(manifestPromises);
+      console.log(`Manifests fetched, starting analysis...`);
 
-      const result = await response.json();
+      // Process all versions concurrently with pre-fetched start blocks
+      const subgraphPromises = versions.map(
+        (
+          v: {
+            subgraphId: string;
+            version: number;
+            ipfsHash: string;
+            signalAmount: string;
+            allocations: any[];
+          },
+          index: number
+        ) =>
+          fetch(
+            `/api/analyze-version?subgraphId=${encodeURIComponent(
+              v.subgraphId
+            )}&version=${v.version}&ipfsHash=${encodeURIComponent(
+              v.ipfsHash
+            )}&signalAmount=${encodeURIComponent(
+              v.signalAmount
+            )}&allocations=${encodeURIComponent(
+              JSON.stringify(v.allocations)
+            )}&startBlock=${startBlocks[index]}`
+          ).then((res) => {
+            if (!res.ok)
+              throw new Error(`Failed to analyze version ${v.ipfsHash}`);
+            return res.json();
+          })
+      );
+      const subgraphs = await Promise.all(subgraphPromises);
+      // Compute summary
+      const summary = {
+        total_subgraphs: new Set(subgraphs.map((s) => s.subgraph_id)).size,
+        total_versions: subgraphs.length,
+        total_query_volume: subgraphs.reduce(
+          (sum, s) => sum + s.query_volume_30d,
+          0
+        ),
+        subgraphs_with_queries: subgraphs.filter((s) => s.query_volume_30d > 0)
+          .length,
+        total_indexers: subgraphs.reduce((sum, s) => sum + s.indexer_count, 0),
+        responding_indexers: subgraphs.reduce(
+          (sum, s) => sum + s.indexers_responding,
+          0
+        ),
+        synced_indexers: subgraphs.reduce(
+          (sum, s) => sum + s.indexers_synced,
+          0
+        ),
+        healthy_indexers: subgraphs.reduce(
+          (sum, s) => sum + s.indexers_healthy,
+          0
+        ),
+        processing_time: 0,
+      };
+      // Top by signal
+      const topBySignal = subgraphs
+        .filter((s) => s.signal_amount !== "0")
+        .sort(
+          (a, b) => parseFloat(b.signal_amount) - parseFloat(a.signal_amount)
+        )
+        .slice(0, 5);
+      // Top by queries
+      const topByQueries = subgraphs
+        .filter((s) => s.query_volume_30d > 0)
+        .sort((a, b) => b.query_volume_30d - a.query_volume_30d)
+        .slice(0, 5);
+      // Problematic subgraphs
+      const issues = subgraphs.filter(
+        (s) =>
+          s.indexer_count > 0 &&
+          s.sync_percentage !== "0%" &&
+          s.sync_percentage !== "N/A" &&
+          parseFloat(s.sync_percentage.replace("%", "")) < 100
+      );
+      // Find latest versions
+      const latestVersions: { [key: string]: SubgraphData } = {};
+      subgraphs.forEach((s) => {
+        if (
+          !latestVersions[s.subgraph_id] ||
+          s.version > latestVersions[s.subgraph_id].version
+        ) {
+          latestVersions[s.subgraph_id] = s;
+        }
+      });
+      const problematicSubgraphs = issues.map((s) => ({
+        ...s,
+        is_latest: latestVersions[s.subgraph_id]?.ipfs_hash === s.ipfs_hash,
+        signal_amount_formatted:
+          s.signal_amount !== "0"
+            ? (parseFloat(s.signal_amount) / 1e18).toFixed(2)
+            : "0",
+      }));
+      const result = {
+        subgraphs,
+        summary,
+        top_by_signal: topBySignal,
+        top_by_queries: topByQueries,
+        problematic_subgraphs: problematicSubgraphs,
+      };
       setAnalysisResult(result);
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
@@ -65,31 +194,145 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-
   const handleRefresh = async () => {
     if (!walletAddress.trim()) {
       setError("Please enter a wallet address first");
       return;
     }
-
     setIsLoading(true);
     setError(null);
-
+    // Reuse the same logic as handleAnalyze but without clearing analysisResult
     try {
-      const response = await fetch("/api/analyze", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ walletAddress: walletAddress.trim() }),
+      const subgraphsRes = await fetch(
+        `/api/subgraphs?account=${encodeURIComponent(walletAddress.trim())}`
+      );
+      if (!subgraphsRes.ok) {
+        const err = await subgraphsRes.json();
+        throw new Error(err.error || "Failed to fetch subgraphs");
+      }
+      const { versions } = await subgraphsRes.json();
+
+      // Pre-fetch all manifests concurrently to get start blocks
+      console.log(`Pre-fetching manifests for ${versions.length} versions...`);
+      const manifestPromises = versions.map(async (v: any) => {
+        try {
+          const manifestRes = await Promise.race([
+            fetch(`https://api.thegraph.com/ipfs/api/v0/cat?arg=${v.ipfsHash}`),
+            new Promise<never>((_, reject) =>
+              setTimeout(() => reject(new Error("Manifest timeout")), 2000)
+            ),
+          ]);
+
+          if (manifestRes.ok) {
+            const manifest = await manifestRes.text();
+            const matches = [...manifest.matchAll(/startBlock:\s*(\d+)/g)];
+            if (matches.length > 0) {
+              return Math.min(...matches.map((m) => parseInt(m[1])));
+            }
+          }
+        } catch (error) {
+          console.warn(`Failed to fetch manifest for ${v.ipfsHash}:`, error);
+        }
+        return 0; // Default start block
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to refresh data");
-      }
+      const startBlocks = await Promise.all(manifestPromises);
+      console.log(`Manifests fetched, starting analysis...`);
 
-      const result = await response.json();
+      // Process all versions concurrently with pre-fetched start blocks
+      const subgraphPromises = versions.map(
+        (
+          v: {
+            subgraphId: string;
+            version: number;
+            ipfsHash: string;
+            signalAmount: string;
+            allocations: any[];
+          },
+          index: number
+        ) =>
+          fetch(
+            `/api/analyze-version?subgraphId=${encodeURIComponent(
+              v.subgraphId
+            )}&version=${v.version}&ipfsHash=${encodeURIComponent(
+              v.ipfsHash
+            )}&signalAmount=${encodeURIComponent(
+              v.signalAmount
+            )}&allocations=${encodeURIComponent(
+              JSON.stringify(v.allocations)
+            )}&startBlock=${startBlocks[index]}`
+          ).then((res) => {
+            if (!res.ok)
+              throw new Error(`Failed to analyze version ${v.ipfsHash}`);
+            return res.json();
+          })
+      );
+      const subgraphs = await Promise.all(subgraphPromises);
+      const summary = {
+        total_subgraphs: new Set(subgraphs.map((s) => s.subgraph_id)).size,
+        total_versions: subgraphs.length,
+        total_query_volume: subgraphs.reduce(
+          (sum, s) => sum + s.query_volume_30d,
+          0
+        ),
+        subgraphs_with_queries: subgraphs.filter((s) => s.query_volume_30d > 0)
+          .length,
+        total_indexers: subgraphs.reduce((sum, s) => sum + s.indexer_count, 0),
+        responding_indexers: subgraphs.reduce(
+          (sum, s) => sum + s.indexers_responding,
+          0
+        ),
+        synced_indexers: subgraphs.reduce(
+          (sum, s) => sum + s.indexers_synced,
+          0
+        ),
+        healthy_indexers: subgraphs.reduce(
+          (sum, s) => sum + s.indexers_healthy,
+          0
+        ),
+        processing_time: 0,
+      };
+      const topBySignal = subgraphs
+        .filter((s) => s.signal_amount !== "0")
+        .sort(
+          (a, b) => parseFloat(b.signal_amount) - parseFloat(a.signal_amount)
+        )
+        .slice(0, 5);
+      const topByQueries = subgraphs
+        .filter((s) => s.query_volume_30d > 0)
+        .sort((a, b) => b.query_volume_30d - a.query_volume_30d)
+        .slice(0, 5);
+      const issues = subgraphs.filter(
+        (s) =>
+          s.indexer_count > 0 &&
+          s.sync_percentage !== "0%" &&
+          s.sync_percentage !== "N/A" &&
+          parseFloat(s.sync_percentage.replace("%", "")) < 100
+      );
+      const latestVersions: { [key: string]: SubgraphData } = {};
+      subgraphs.forEach((s) => {
+        if (
+          !latestVersions[s.subgraph_id] ||
+          s.version > latestVersions[s.subgraph_id].version
+        ) {
+          latestVersions[s.subgraph_id] = s;
+        }
+      });
+      const problematicSubgraphs = issues.map((s) => ({
+        ...s,
+        is_latest: latestVersions[s.subgraph_id]?.ipfs_hash === s.ipfs_hash,
+        signal_amount_formatted:
+          s.signal_amount !== "0"
+            ? (parseFloat(s.signal_amount) / 1e18).toFixed(2)
+            : "0",
+      }));
+      const result = {
+        subgraphs,
+        summary,
+        top_by_signal: topBySignal,
+        top_by_queries: topByQueries,
+        problematic_subgraphs: problematicSubgraphs,
+      };
       setAnalysisResult(result);
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred");
