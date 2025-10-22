@@ -15,8 +15,8 @@ import {
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SubgraphData } from "@/types/subgraph";
-import { useTheme } from "next-themes";
 import { Info } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface ChartsSectionProps {
   data: {
@@ -48,6 +48,89 @@ export default function ChartsSection({
   onFilterByQueriesChange,
 }: ChartsSectionProps) {
   const { subgraphs, summary } = data;
+  const [themeKey, setThemeKey] = useState(0);
+
+  // Listen for theme changes
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          setThemeKey((prev) => prev + 1);
+          // Force update chart text colors after theme change (Chromium fix)
+          setTimeout(() => {
+            forceUpdateChartTextColors();
+          }, 100);
+        }
+      });
+    });
+
+    if (typeof window !== "undefined") {
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Force update chart text colors - Nuclear option for Chromium
+  const forceUpdateChartTextColors = () => {
+    if (typeof window === "undefined") return;
+
+    const isDark = document.documentElement.classList.contains("dark");
+    const textColor = isDark ? "#ffffff" : "#000000";
+
+    // Target ALL possible text elements in charts with multiple selectors
+    const selectors = [
+      ".recharts-wrapper text",
+      ".recharts-wrapper svg text",
+      ".recharts-cartesian-axis-tick-value",
+      ".recharts-text",
+      "svg text",
+      "[class*='recharts'] text",
+    ];
+
+    selectors.forEach((selector) => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach((el) => {
+        const textEl = el as SVGTextElement;
+        textEl.style.fill = textColor + " !important";
+        textEl.style.color = textColor + " !important";
+        textEl.setAttribute("fill", textColor);
+        textEl.setAttribute("color", textColor);
+        // Force style attribute
+        textEl.style.setProperty("fill", textColor, "important");
+        textEl.style.setProperty("color", textColor, "important");
+      });
+    });
+  };
+
+  // Continuous monitoring for Chromium
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+
+    const startMonitoring = () => {
+      // Initial fix
+      setTimeout(() => forceUpdateChartTextColors(), 100);
+      setTimeout(() => forceUpdateChartTextColors(), 500);
+      setTimeout(() => forceUpdateChartTextColors(), 1000);
+
+      // Continuous monitoring every 2 seconds
+      intervalId = setInterval(() => {
+        forceUpdateChartTextColors();
+      }, 2000);
+    };
+
+    startMonitoring();
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [themeKey]);
 
   // Helper function to get filtered subgraphs based on checkboxes
   const getFilteredSubgraphs = (subgraphs: SubgraphData[]): SubgraphData[] => {
@@ -125,11 +208,31 @@ export default function ChartsSection({
     }, 0);
   };
 
-  const { theme } = useTheme();
+  // Use CSS variables for chart text colors - more reliable than JS theme detection
+  const textColor = "hsl(var(--chart-text))";
+  const mutedTextColor = "hsl(var(--chart-text-muted))";
 
-  // Define explicit colors based on theme
-  const textColor = theme === "dark" ? "#ffffff" : "#000000";
-  const mutedTextColor = theme === "dark" ? "#9ca3af" : "#6b7280";
+  // For inline styles in Recharts, we need to get the computed CSS values
+  const getComputedTextColor = () => {
+    if (typeof window !== "undefined") {
+      const root = document.documentElement;
+      const isDark = root.classList.contains("dark");
+      return isDark ? "#ffffff" : "#000000";
+    }
+    return "#000000"; // fallback
+  };
+
+  const getComputedMutedTextColor = () => {
+    if (typeof window !== "undefined") {
+      const root = document.documentElement;
+      const isDark = root.classList.contains("dark");
+      return isDark ? "#9ca3af" : "#6b7280";
+    }
+    return "#6b7280"; // fallback
+  };
+
+  const computedTextColor = getComputedTextColor();
+  const computedMutedTextColor = getComputedMutedTextColor();
 
   // Define color schemes for different themes
   const colors = {
@@ -236,155 +339,113 @@ export default function ChartsSection({
   ];
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* Sync Status Chart */}
-      <Card>
-        <CardHeader className="pb-2">
-          <CardTitle>Sync Status Distribution</CardTitle>
-        </CardHeader>
-        <CardContent className="p-2">
-          <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={syncChartData}>
-              <CartesianGrid stroke={mutedTextColor} opacity={0.3} />
-              <XAxis
-                dataKey="status"
-                stroke={textColor}
-                tick={{ fill: textColor, fontSize: 12 }}
-              />
-              <YAxis
-                stroke={textColor}
-                tick={{ fill: textColor }}
-                tickFormatter={formatNumber}
-              />
-              <Tooltip
-                content={({ active, payload, label }) => {
-                  if (active && payload && payload.length) {
-                    return (
-                      <div
-                        style={{
-                          backgroundColor: "hsl(var(--card))",
-                          border: "1px solid hsl(var(--border))",
-                          borderRadius: "6px",
-                          padding: "8px 12px",
-                          color: textColor,
-                        }}
-                      >
-                        <p style={{ color: textColor, margin: 0 }}>
-                          {`${label}: ${payload[0].value}`}
-                        </p>
-                      </div>
-                    );
-                  }
-                  return null;
-                }}
-              />
-              <Bar dataKey="count">
-                {syncChartData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-        </CardContent>
-      </Card>
-
-      {/* Indexer Health Chart */}
-      <Card>
-        <CardHeader className="pb-2">
-          <CardTitle>Indexer Health Status</CardTitle>
-        </CardHeader>
-        <CardContent className="p-2">
-          <ResponsiveContainer width="100%" height={450}>
-            <PieChart>
-              <Pie
-                data={indexerHealthData}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                outerRadius={150}
-                fill="#8884d8"
-                dataKey="value"
-              >
-                {indexerHealthData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-                <LabelList
-                  dataKey={(entry) =>
-                    `${entry.name} ${(
-                      (entry.value /
-                        indexerHealthData.reduce(
-                          (sum, item) => sum + item.value,
-                          0
-                        )) *
-                      100
-                    ).toFixed(0)}%`
-                  }
-                  position="outside"
-                  style={{ fill: textColor, fontSize: 12 }}
-                />
-              </Pie>
-              <Tooltip
-                content={({ active, payload }) => {
-                  if (active && payload && payload.length) {
-                    const data = payload[0];
-                    return (
-                      <div
-                        style={{
-                          backgroundColor: "hsl(var(--card))",
-                          border: "1px solid hsl(var(--border))",
-                          borderRadius: "6px",
-                          padding: "8px 12px",
-                          color: textColor,
-                        }}
-                      >
-                        <p style={{ color: textColor, margin: 0 }}>
-                          {`${data.name}: ${data.value} (${(
-                            (data.value /
-                              indexerHealthData.reduce(
-                                (sum, item) => sum + item.value,
-                                0
-                              )) *
-                            100
-                          ).toFixed(0)}%)`}
-                        </p>
-                      </div>
-                    );
-                  }
-                  return null;
-                }}
-              />
-            </PieChart>
-          </ResponsiveContainer>
-        </CardContent>
-      </Card>
-
-      {/* Top Query Volume Chart */}
-      {queryVolumeData.length > 0 && (
-        <Card className="lg:col-span-2">
+    <>
+      {/* Chromium-specific style injection */}
+      <style
+        key={`chart-styles-${themeKey}`}
+        dangerouslySetInnerHTML={{
+          __html: `
+          .recharts-wrapper text,
+          .recharts-wrapper svg text,
+          .recharts-cartesian-axis-tick-value,
+          .recharts-text,
+          svg text,
+          [class*='recharts'] text {
+            fill: ${getComputedTextColor()} !important;
+            color: ${getComputedTextColor()} !important;
+          }
+        `,
+        }}
+      />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Sync Status Chart */}
+        <Card>
           <CardHeader className="pb-2">
-            <CardTitle>Top 10 Subgraphs by Query Volume (30 days)</CardTitle>
+            <CardTitle>Sync Status Distribution</CardTitle>
           </CardHeader>
           <CardContent className="p-2">
-            <ResponsiveContainer width="100%" height={450}>
-              <BarChart data={queryVolumeData}>
-                <CartesianGrid
-                  strokeDasharray="3 3"
-                  stroke={mutedTextColor}
-                  opacity={0.3}
-                />
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart key={`sync-${themeKey}`} data={syncChartData}>
+                <CartesianGrid stroke={mutedTextColor} opacity={0.3} />
                 <XAxis
-                  dataKey="name"
-                  stroke={textColor}
-                  tick={{ fill: textColor, fontSize: 10 }}
-                  interval={0}
+                  dataKey="status"
+                  stroke={getComputedTextColor()}
+                  tick={{ fill: getComputedTextColor(), fontSize: 12 }}
                 />
                 <YAxis
-                  stroke={textColor}
-                  tick={{ fill: textColor }}
+                  stroke={getComputedTextColor()}
+                  tick={{ fill: getComputedTextColor() }}
                   tickFormatter={formatNumber}
                 />
                 <Tooltip
                   content={({ active, payload, label }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div
+                          style={{
+                            backgroundColor: "hsl(var(--card))",
+                            border: "1px solid hsl(var(--border))",
+                            borderRadius: "6px",
+                            padding: "8px 12px",
+                            color: textColor,
+                          }}
+                        >
+                          <p style={{ color: textColor, margin: 0 }}>
+                            {`${label}: ${payload[0].value}`}
+                          </p>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
+                />
+                <Bar dataKey="count">
+                  {syncChartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </CardContent>
+        </Card>
+
+        {/* Indexer Health Chart */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle>Indexer Health Status</CardTitle>
+          </CardHeader>
+          <CardContent className="p-2">
+            <ResponsiveContainer width="100%" height={450}>
+              <PieChart key={`pie-${themeKey}`}>
+                <Pie
+                  data={indexerHealthData}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  outerRadius={150}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {indexerHealthData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={entry.color} />
+                  ))}
+                  <LabelList
+                    dataKey={(entry) =>
+                      `${entry.name} ${(
+                        (entry.value /
+                          indexerHealthData.reduce(
+                            (sum, item) => sum + item.value,
+                            0
+                          )) *
+                        100
+                      ).toFixed(0)}%`
+                    }
+                    position="outside"
+                    style={{ fill: getComputedTextColor(), fontSize: 12 }}
+                  />
+                </Pie>
+                <Tooltip
+                  content={({ active, payload }) => {
                     if (active && payload && payload.length) {
                       const data = payload[0];
                       return (
@@ -398,9 +459,14 @@ export default function ChartsSection({
                           }}
                         >
                           <p style={{ color: textColor, margin: 0 }}>
-                            {`${label}: ${formatNumber(
-                              data.value as number
-                            )} queries`}
+                            {`${data.name}: ${data.value} (${(
+                              (data.value /
+                                indexerHealthData.reduce(
+                                  (sum, item) => sum + item.value,
+                                  0
+                                )) *
+                              100
+                            ).toFixed(0)}%)`}
                           </p>
                         </div>
                       );
@@ -408,99 +474,155 @@ export default function ChartsSection({
                     return null;
                   }}
                 />
-                <Bar dataKey="queries" name="queries">
-                  {queryVolumeData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Bar>
-              </BarChart>
+              </PieChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
-      )}
 
-      {/* Summary Stats */}
-      <Card className="lg:col-span-2">
-        <CardHeader>
-          <CardTitle>Performance Summary</CardTitle>
-          <div className="flex gap-4 mt-4">
-            <label className="flex items-center space-x-2 text-sm">
-              <input
-                type="checkbox"
-                checked={filterBySignal}
-                onChange={(e) => onFilterBySignalChange(e.target.checked)}
-                className="rounded border-gray-300"
-              />
-              <span>Filter by {">"}0 Signal</span>
-            </label>
-            <label className="flex items-center space-x-2 text-sm">
-              <input
-                type="checkbox"
-                checked={filterByQueries}
-                onChange={(e) => onFilterByQueriesChange(e.target.checked)}
-                className="rounded border-gray-300"
-              />
-              <span>Filter by {">"}0 Queries (30D)</span>
-            </label>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-primary">
-                {getSyncRate(subgraphs).toFixed(1)}%
-              </div>
-              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
-                <span>Sync Rate</span>
-                <div className="group relative">
-                  <Info className="h-3 w-3 text-muted-foreground cursor-help" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
-                    Percentage of filtered subgraph versions that have at least
-                    one indexer at 100% sync
+        {/* Top Query Volume Chart */}
+        {queryVolumeData.length > 0 && (
+          <Card className="lg:col-span-2">
+            <CardHeader className="pb-2">
+              <CardTitle>Top 10 Subgraphs by Query Volume (30 days)</CardTitle>
+            </CardHeader>
+            <CardContent className="p-2">
+              <ResponsiveContainer width="100%" height={450}>
+                <BarChart key={`query-${themeKey}`} data={queryVolumeData}>
+                  <CartesianGrid
+                    strokeDasharray="3 3"
+                    stroke={mutedTextColor}
+                    opacity={0.3}
+                  />
+                  <XAxis
+                    dataKey="name"
+                    stroke={getComputedTextColor()}
+                    tick={{ fill: getComputedTextColor(), fontSize: 10 }}
+                    interval={0}
+                  />
+                  <YAxis
+                    stroke={getComputedTextColor()}
+                    tick={{ fill: getComputedTextColor() }}
+                    tickFormatter={formatNumber}
+                  />
+                  <Tooltip
+                    content={({ active, payload, label }) => {
+                      if (active && payload && payload.length) {
+                        const data = payload[0];
+                        return (
+                          <div
+                            style={{
+                              backgroundColor: "hsl(var(--card))",
+                              border: "1px solid hsl(var(--border))",
+                              borderRadius: "6px",
+                              padding: "8px 12px",
+                              color: textColor,
+                            }}
+                          >
+                            <p style={{ color: textColor, margin: 0 }}>
+                              {`${label}: ${formatNumber(
+                                data.value as number
+                              )} queries`}
+                            </p>
+                          </div>
+                        );
+                      }
+                      return null;
+                    }}
+                  />
+                  <Bar dataKey="queries" name="queries">
+                    {queryVolumeData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Summary Stats */}
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Performance Summary</CardTitle>
+            <div className="flex gap-4 mt-4">
+              <label className="flex items-center space-x-2 text-sm">
+                <input
+                  type="checkbox"
+                  checked={filterBySignal}
+                  onChange={(e) => onFilterBySignalChange(e.target.checked)}
+                  className="rounded border-gray-300"
+                />
+                <span>Filter by {">"}0 Signal</span>
+              </label>
+              <label className="flex items-center space-x-2 text-sm">
+                <input
+                  type="checkbox"
+                  checked={filterByQueries}
+                  onChange={(e) => onFilterByQueriesChange(e.target.checked)}
+                  className="rounded border-gray-300"
+                />
+                <span>Filter by {">"}0 Queries (30D)</span>
+              </label>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">
+                  {getSyncRate(subgraphs).toFixed(1)}%
+                </div>
+                <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                  <span>Sync Rate</span>
+                  <div className="group relative">
+                    <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                      Percentage of filtered subgraph versions that have at
+                      least one indexer at 100% sync
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">
-                {getHealthRate(subgraphs).toFixed(1)}%
-              </div>
-              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
-                <span>Health Rate</span>
-                <div className="group relative">
-                  <Info className="h-3 w-3 text-muted-foreground cursor-help" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
-                    Percentage of filtered subgraph versions that have at least
-                    one healthy indexer
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green-600">
+                  {getHealthRate(subgraphs).toFixed(1)}%
+                </div>
+                <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                  <span>Health Rate</span>
+                  <div className="group relative">
+                    <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                      Percentage of filtered subgraph versions that have at
+                      least one healthy indexer
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">
-                {getActiveSubgraphs(subgraphs)}
-              </div>
-              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
-                <span>Active Subgraph Versions</span>
-                <div className="group relative">
-                  <Info className="h-3 w-3 text-muted-foreground cursor-help" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
-                    Number of filtered subgraph versions
+              <div className="text-center">
+                <div className="text-2xl font-bold text-purple-600">
+                  {getActiveSubgraphs(subgraphs)}
+                </div>
+                <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                  <span>Active Subgraph Versions</span>
+                  <div className="group relative">
+                    <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                      Number of filtered subgraph versions
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600">
-                {getTotalQueryVolume(subgraphs).toLocaleString()}
+              <div className="text-center">
+                <div className="text-2xl font-bold text-orange-600">
+                  {getTotalQueryVolume(subgraphs).toLocaleString()}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Total Queries (30D)
+                </div>
               </div>
-              <div className="text-sm text-muted-foreground">
-                Total Queries (30D)
-              </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   );
 }

@@ -21,6 +21,8 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-chart-text: var(--chart-text);
+  --color-chart-text-muted: var(--chart-text-muted);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -68,6 +70,8 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+  --chart-text: oklch(0.145 0 0);
+  --chart-text-muted: oklch(0.556 0 0);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -102,6 +106,8 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
+  --chart-text: oklch(0.985 0 0);
+  --chart-text-muted: oklch(0.708 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -118,5 +124,88 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Ensure chart text colors are applied correctly - Chromium-specific fixes */
+  .recharts-text {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-cartesian-axis-tick-value {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-cartesian-axis-tick {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-xAxis .recharts-cartesian-axis-tick-value {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-yAxis .recharts-cartesian-axis-tick-value {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-cartesian-axis {
+    color: hsl(var(--chart-text)) !important;
+    fill: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-legend-item-text {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-tooltip-wrapper {
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  /* Target all text elements within Recharts - Nuclear option for Chromium */
+  .recharts-wrapper text {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-wrapper svg text {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  /* Specific targeting for axis labels */
+  .recharts-cartesian-axis-tick text {
+    fill: hsl(var(--chart-text)) !important;
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  /* Chromium-specific SVG text targeting */
+  svg text {
+    fill: hsl(var(--chart-text)) !important;
+  }
+
+  /* Force override any inline styles in Chromium */
+  .recharts-wrapper * {
+    color: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-wrapper text[fill="#666"] {
+    fill: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-wrapper text[fill="#000"] {
+    fill: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-wrapper text[fill="#000000"] {
+    fill: hsl(var(--chart-text)) !important;
+  }
+
+  .recharts-wrapper text[fill="black"] {
+    fill: hsl(var(--chart-text)) !important;
   }
 }
