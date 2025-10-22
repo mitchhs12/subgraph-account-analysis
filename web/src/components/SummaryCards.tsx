@@ -1,4 +1,4 @@
-import { BarChart3, Users, CheckCircle, TrendingUp } from "lucide-react";
+import { BarChart3, Users, CheckCircle, TrendingUp, Info } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface SummaryCardsProps {
@@ -9,9 +9,11 @@ interface SummaryCardsProps {
       total_query_volume: number;
       subgraphs_with_queries: number;
       total_indexers: number;
+      total_indexer_instances: number;
       responding_indexers: number;
       synced_indexers: number;
       healthy_indexers: number;
+      sync_rate: number;
     };
   };
 }
@@ -42,8 +44,9 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
       bgColor: "bg-green-50",
     },
     {
-      title: "Active Indexers",
+      title: "Unique Indexers",
       value: summary.total_indexers,
+      subtitle: `${summary.total_indexer_instances} total instances`,
       icon: Users,
       color: "text-orange-600",
       bgColor: "bg-orange-50",
@@ -51,10 +54,7 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
     {
       title: "Synced Indexers",
       value: summary.synced_indexers,
-      subtitle: `${(
-        (summary.synced_indexers / summary.responding_indexers) *
-        100
-      ).toFixed(1)}% of responding`,
+      subtitle: `${summary.sync_rate.toFixed(1)}% of versions fully synced`,
       icon: CheckCircle,
       color: "text-emerald-600",
       bgColor: "bg-emerald-50",
@@ -76,6 +76,8 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {cards.map((card, index) => {
         const Icon = card.icon;
+        const isSyncedIndexers = card.title === "Synced Indexers";
+
         return (
           <Card key={index}>
             <CardContent className="p-6">
@@ -88,9 +90,20 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
                     {card.value}
                   </p>
                   {card.subtitle && (
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {card.subtitle}
-                    </p>
+                    <div className="flex items-center gap-1 mt-1">
+                      <p className="text-sm text-muted-foreground">
+                        {card.subtitle}
+                      </p>
+                      {isSyncedIndexers && (
+                        <div className="group relative">
+                          <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                            Percentage of subgraph versions that have at least
+                            one indexer at 100% sync
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   )}
                 </div>
                 <div className={`p-3 rounded-lg ${card.bgColor}`}>

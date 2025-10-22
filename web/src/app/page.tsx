@@ -37,6 +37,47 @@ export default function Home() {
   );
   const [error, setError] = useState<string | null>(null);
   const [cache] = useState<Map<string, AnalysisResult>>(new Map());
+  const [filterBySignal, setFilterBySignal] = useState(true);
+  const [filterByQueries, setFilterByQueries] = useState(false);
+
+  // Helper function to count unique indexers
+  const getUniqueIndexers = (subgraphs: SubgraphData[]): number => {
+    const uniqueIndexers = new Set<string>();
+    subgraphs.forEach((subgraph) => {
+      if (subgraph.active_indexers && subgraph.active_indexers !== "None") {
+        const indexers = subgraph.active_indexers
+          .split(", ")
+          .filter((id) => id.trim() !== "");
+        indexers.forEach((id) => uniqueIndexers.add(id.trim()));
+      }
+    });
+    return uniqueIndexers.size;
+  };
+
+  // Helper function to calculate sync rate (subgraph versions with at least 1 indexer at 100%)
+  const getSyncRate = (subgraphs: SubgraphData[]): number => {
+    const versionsWithFullySyncedIndexer = subgraphs.filter((subgraph) => {
+      if (
+        !subgraph.indexer_sync_percentages ||
+        subgraph.indexer_sync_percentages === "None"
+      ) {
+        return false;
+      }
+      const percentages = subgraph.indexer_sync_percentages
+        .split(", ")
+        .map((pct) => pct.trim())
+        .filter((pct) => pct !== "N/A" && pct.endsWith("%"));
+
+      return percentages.some((pct) => {
+        const numericValue = parseFloat(pct.replace("%", ""));
+        return numericValue >= 100;
+      });
+    });
+
+    return subgraphs.length > 0
+      ? (versionsWithFullySyncedIndexer.length / subgraphs.length) * 100
+      : 0;
+  };
 
   const handleAnalyze = async () => {
     if (!walletAddress.trim()) {
@@ -136,7 +177,11 @@ export default function Home() {
         ),
         subgraphs_with_queries: subgraphs.filter((s) => s.query_volume_30d > 0)
           .length,
-        total_indexers: subgraphs.reduce((sum, s) => sum + s.indexer_count, 0),
+        total_indexers: getUniqueIndexers(subgraphs),
+        total_indexer_instances: subgraphs.reduce(
+          (sum, s) => sum + s.indexer_count,
+          0
+        ),
         responding_indexers: subgraphs.reduce(
           (sum, s) => sum + s.indexers_responding,
           0
@@ -149,6 +194,7 @@ export default function Home() {
           (sum, s) => sum + s.indexers_healthy,
           0
         ),
+        sync_rate: getSyncRate(subgraphs),
       };
       // Top by signal
       const topBySignal = subgraphs
@@ -290,7 +336,11 @@ export default function Home() {
         ),
         subgraphs_with_queries: subgraphs.filter((s) => s.query_volume_30d > 0)
           .length,
-        total_indexers: subgraphs.reduce((sum, s) => sum + s.indexer_count, 0),
+        total_indexers: getUniqueIndexers(subgraphs),
+        total_indexer_instances: subgraphs.reduce(
+          (sum, s) => sum + s.indexer_count,
+          0
+        ),
         responding_indexers: subgraphs.reduce(
           (sum, s) => sum + s.indexers_responding,
           0
@@ -303,6 +353,7 @@ export default function Home() {
           (sum, s) => sum + s.indexers_healthy,
           0
         ),
+        sync_rate: getSyncRate(subgraphs),
       };
       const topBySignal = subgraphs
         .filter((s) => s.signal_amount !== "0")
@@ -452,7 +503,13 @@ export default function Home() {
             <SummaryCards data={analysisResult} />
 
             {/* Charts Section */}
-            <ChartsSection data={analysisResult} />
+            <ChartsSection
+              data={analysisResult}
+              filterBySignal={filterBySignal}
+              filterByQueries={filterByQueries}
+              onFilterBySignalChange={setFilterBySignal}
+              onFilterByQueriesChange={setFilterByQueries}
+            />
 
             {/* Subgraph Table */}
             <div className="bg-card rounded-lg shadow-sm border">
@@ -487,7 +544,11 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <SubgraphTable data={analysisResult.subgraphs} />
+              <SubgraphTable
+                data={analysisResult.subgraphs}
+                filterBySignal={filterBySignal}
+                filterByQueries={filterByQueries}
+              />
             </div>
           </div>
         )}

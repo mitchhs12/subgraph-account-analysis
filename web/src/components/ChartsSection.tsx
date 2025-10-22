@@ -16,6 +16,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SubgraphData } from "@/types/subgraph";
 import { useTheme } from "next-themes";
+import { Info } from "lucide-react";
 
 interface ChartsSectionProps {
   data: {
@@ -26,15 +27,104 @@ interface ChartsSectionProps {
       total_query_volume: number;
       subgraphs_with_queries: number;
       total_indexers: number;
+      total_indexer_instances: number;
       responding_indexers: number;
       synced_indexers: number;
       healthy_indexers: number;
+      sync_rate: number;
     };
   };
+  filterBySignal: boolean;
+  filterByQueries: boolean;
+  onFilterBySignalChange: (value: boolean) => void;
+  onFilterByQueriesChange: (value: boolean) => void;
 }
 
-export default function ChartsSection({ data }: ChartsSectionProps) {
+export default function ChartsSection({
+  data,
+  filterBySignal,
+  filterByQueries,
+  onFilterBySignalChange,
+  onFilterByQueriesChange,
+}: ChartsSectionProps) {
   const { subgraphs, summary } = data;
+
+  // Helper function to get filtered subgraphs based on checkboxes
+  const getFilteredSubgraphs = (subgraphs: SubgraphData[]): SubgraphData[] => {
+    return subgraphs.filter((subgraph) => {
+      const hasSignal =
+        subgraph.signal_amount && subgraph.signal_amount !== "0";
+      const hasQueries = subgraph.query_volume_30d > 0;
+
+      if (filterBySignal && filterByQueries) {
+        return hasSignal && hasQueries;
+      } else if (filterBySignal) {
+        return hasSignal;
+      } else if (filterByQueries) {
+        return hasQueries;
+      } else {
+        return true; // No filters applied
+      }
+    });
+  };
+
+  // Helper function to calculate sync rate for filtered subgraphs
+  const getSyncRate = (subgraphs: SubgraphData[]): number => {
+    const filteredSubgraphs = getFilteredSubgraphs(subgraphs);
+
+    if (filteredSubgraphs.length === 0) return 0;
+
+    const versionsWithFullySyncedIndexer = filteredSubgraphs.filter(
+      (subgraph) => {
+        if (
+          !subgraph.indexer_sync_percentages ||
+          subgraph.indexer_sync_percentages === "None"
+        ) {
+          return false;
+        }
+
+        const percentages = subgraph.indexer_sync_percentages
+          .split(", ")
+          .map((pct) => pct.trim())
+          .filter((pct) => pct !== "N/A" && pct.endsWith("%"));
+
+        return percentages.some((pct) => {
+          const numericValue = parseFloat(pct.replace("%", ""));
+          return numericValue >= 100;
+        });
+      }
+    );
+
+    return (
+      (versionsWithFullySyncedIndexer.length / filteredSubgraphs.length) * 100
+    );
+  };
+
+  // Helper function to calculate health rate for filtered subgraphs
+  const getHealthRate = (subgraphs: SubgraphData[]): number => {
+    const filteredSubgraphs = getFilteredSubgraphs(subgraphs);
+
+    if (filteredSubgraphs.length === 0) return 0;
+
+    const versionsWithHealthy = filteredSubgraphs.filter((subgraph) => {
+      return subgraph.indexers_healthy > 0;
+    });
+
+    return (versionsWithHealthy.length / filteredSubgraphs.length) * 100;
+  };
+
+  // Helper function to count active subgraphs for filtered subgraphs
+  const getActiveSubgraphs = (subgraphs: SubgraphData[]): number => {
+    return getFilteredSubgraphs(subgraphs).length;
+  };
+
+  // Helper function to get total query volume for filtered subgraphs
+  const getTotalQueryVolume = (subgraphs: SubgraphData[]): number => {
+    return getFilteredSubgraphs(subgraphs).reduce((sum, subgraph) => {
+      return sum + subgraph.query_volume_30d;
+    }, 0);
+  };
+
   const { theme } = useTheme();
 
   // Define explicit colors based on theme
@@ -140,7 +230,7 @@ export default function ChartsSection({ data }: ChartsSectionProps) {
     },
     {
       name: "Not Responding",
-      value: summary.total_indexers - summary.responding_indexers,
+      value: summary.total_indexer_instances - summary.responding_indexers,
       color: colors.health["Not Responding"],
     },
   ];
@@ -333,40 +423,76 @@ export default function ChartsSection({ data }: ChartsSectionProps) {
       <Card className="lg:col-span-2">
         <CardHeader>
           <CardTitle>Performance Summary</CardTitle>
+          <div className="flex gap-4 mt-4">
+            <label className="flex items-center space-x-2 text-sm">
+              <input
+                type="checkbox"
+                checked={filterBySignal}
+                onChange={(e) => onFilterBySignalChange(e.target.checked)}
+                className="rounded border-gray-300"
+              />
+              <span>Filter by {">"}0 Signal</span>
+            </label>
+            <label className="flex items-center space-x-2 text-sm">
+              <input
+                type="checkbox"
+                checked={filterByQueries}
+                onChange={(e) => onFilterByQueriesChange(e.target.checked)}
+                className="rounded border-gray-300"
+              />
+              <span>Filter by {">"}0 Queries (30D)</span>
+            </label>
+          </div>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-2xl font-bold text-primary">
-                {(
-                  (summary.synced_indexers / summary.responding_indexers) *
-                  100
-                ).toFixed(1)}
-                %
+                {getSyncRate(subgraphs).toFixed(1)}%
               </div>
-              <div className="text-sm text-muted-foreground">Sync Rate</div>
+              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                <span>Sync Rate</span>
+                <div className="group relative">
+                  <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    Percentage of filtered subgraph versions that have at least
+                    one indexer at 100% sync
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">
-                {(
-                  (summary.healthy_indexers / summary.responding_indexers) *
-                  100
-                ).toFixed(1)}
-                %
+                {getHealthRate(subgraphs).toFixed(1)}%
               </div>
-              <div className="text-sm text-muted-foreground">Health Rate</div>
+              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                <span>Health Rate</span>
+                <div className="group relative">
+                  <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    Percentage of filtered subgraph versions that have at least
+                    one healthy indexer
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">
-                {summary.subgraphs_with_queries}
+                {getActiveSubgraphs(subgraphs)}
               </div>
-              <div className="text-sm text-muted-foreground">
-                Active Subgraphs
+              <div className="flex items-center justify-center gap-1 text-sm text-muted-foreground">
+                <span>Active Subgraph Versions</span>
+                <div className="group relative">
+                  <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-10">
+                    Number of filtered subgraph versions
+                  </div>
+                </div>
               </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-orange-600">
-                {summary.total_query_volume.toLocaleString()}
+                {getTotalQueryVolume(subgraphs).toLocaleString()}
               </div>
               <div className="text-sm text-muted-foreground">
                 Total Queries (30D)

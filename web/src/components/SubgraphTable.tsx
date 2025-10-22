@@ -15,14 +15,36 @@ import { SubgraphData } from "@/types/subgraph";
 
 interface SubgraphTableProps {
   data: SubgraphData[];
+  filterBySignal?: boolean;
+  filterByQueries?: boolean;
 }
 
-export default function SubgraphTable({ data }: SubgraphTableProps) {
+export default function SubgraphTable({
+  data,
+  filterBySignal = false,
+  filterByQueries = false,
+}: SubgraphTableProps) {
   const [sortField, setSortField] =
     useState<keyof SubgraphData>("signal_amount");
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc");
   const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set());
   const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set());
+
+  // Filter data based on checkboxes
+  const filteredData = data.filter((subgraph) => {
+    const hasSignal = subgraph.signal_amount && subgraph.signal_amount !== "0";
+    const hasQueries = subgraph.query_volume_30d > 0;
+
+    if (filterBySignal && filterByQueries) {
+      return hasSignal && hasQueries;
+    } else if (filterBySignal) {
+      return hasSignal;
+    } else if (filterByQueries) {
+      return hasQueries;
+    } else {
+      return true; // No filters applied
+    }
+  });
 
   const handleSort = (field: keyof SubgraphData) => {
     if (sortField === field) {
@@ -33,7 +55,7 @@ export default function SubgraphTable({ data }: SubgraphTableProps) {
     }
   };
 
-  const sortedData = [...data].sort((a, b) => {
+  const sortedData = [...filteredData].sort((a, b) => {
     let aVal = a[sortField];
     let bVal = b[sortField];
 

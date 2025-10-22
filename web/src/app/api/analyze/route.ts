@@ -102,9 +102,11 @@ async function parseCsvOutput(
     total_query_volume: number;
     subgraphs_with_queries: number;
     total_indexers: number;
+    total_indexer_instances: number;
     responding_indexers: number;
     synced_indexers: number;
     healthy_indexers: number;
+    sync_rate: number;
   };
   top_by_signal: SubgraphData[];
   top_by_queries: SubgraphData[];
@@ -158,6 +160,10 @@ async function parseCsvOutput(
       subgraphs_with_queries: subgraphs.filter((s) => s.query_volume_30d > 0)
         .length,
       total_indexers: subgraphs.reduce((sum, s) => sum + s.indexer_count, 0),
+      total_indexer_instances: subgraphs.reduce(
+        (sum, s) => sum + s.indexer_count,
+        0
+      ),
       responding_indexers: subgraphs.reduce(
         (sum, s) => sum + s.indexers_responding,
         0
@@ -167,6 +173,7 @@ async function parseCsvOutput(
         (sum, s) => sum + s.indexers_healthy,
         0
       ),
+      sync_rate: 0, // This would need to be calculated from subgraph data
     };
 
     // Get top subgraphs by signal amount

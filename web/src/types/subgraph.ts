@@ -23,9 +23,11 @@ export interface AnalysisResult {
     total_query_volume: number;
     subgraphs_with_queries: number;
     total_indexers: number;
+    total_indexer_instances: number;
     responding_indexers: number;
     synced_indexers: number;
     healthy_indexers: number;
+    sync_rate: number;
   };
   top_by_signal: SubgraphData[];
   top_by_queries: SubgraphData[];

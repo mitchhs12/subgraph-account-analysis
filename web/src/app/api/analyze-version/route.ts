@@ -85,7 +85,7 @@ function parseProgressData(
       status = {
         indexer_url: userEns ? `https://${userEns}` : `https://${userAddress}`,
         indexer_id: userAddress,
-        status: "success",
+        status: "active",
         synced,
         health,
         entity_count: "0",
@@ -104,7 +104,7 @@ function parseProgressData(
       status = {
         indexer_url: userEns ? `https://${userEns}` : `https://${userAddress}`,
         indexer_id: userAddress,
-        status: "success",
+        status: "inactive",
         synced,
         health,
         entity_count: "0",
@@ -251,11 +251,9 @@ export async function GET(request: NextRequest) {
   };
   // Compute summary status
   if (indexerStatuses.length > 0) {
-    const successfulStatuses = indexerStatuses.filter(
-      (s) => s.status === "success"
-    );
-    let syncedCount = successfulStatuses.filter((s) => s.synced).length;
-    const healthyCount = successfulStatuses.filter(
+    const activeStatuses = indexerStatuses.filter((s) => s.status === "active");
+    let syncedCount = activeStatuses.filter((s) => s.synced).length;
+    const healthyCount = activeStatuses.filter(
       (s) => s.health === "healthy"
     ).length;
     // Highest sync pct
@@ -268,7 +266,7 @@ export async function GET(request: NextRequest) {
       highestSyncPct = `${maxPct}%`;
       syncedCount = numericPercentages.filter((val) => val >= 100).length;
     }
-    row.indexers_responding = successfulStatuses.length;
+    row.indexers_responding = activeStatuses.length;
     row.indexers_synced = syncedCount;
     row.indexers_healthy = healthyCount;
     row.sync_percentage = highestSyncPct;
