@@ -1,4 +1,4 @@
-import { BarChart3, Users, CheckCircle, Clock, TrendingUp } from "lucide-react";
+import { BarChart3, Users, CheckCircle, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface SummaryCardsProps {
@@ -12,7 +12,6 @@ interface SummaryCardsProps {
       responding_indexers: number;
       synced_indexers: number;
       healthy_indexers: number;
-      processing_time: number;
     };
   };
 }
@@ -102,28 +101,6 @@ export default function SummaryCards({ data }: SummaryCardsProps) {
           </Card>
         );
       })}
-
-      {/* Processing Time Card */}
-      <Card>
-        <CardContent className="p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-muted-foreground">
-                Processing Time
-              </p>
-              <p className="text-2xl font-bold text-foreground mt-1">
-                {summary.processing_time.toFixed(2)}s
-              </p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Analysis completed
-              </p>
-            </div>
-            <div className="p-3 rounded-lg bg-muted">
-              <Clock className="h-6 w-6 text-muted-foreground" />
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

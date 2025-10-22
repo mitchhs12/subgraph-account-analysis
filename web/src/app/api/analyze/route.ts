@@ -105,7 +105,6 @@ async function parseCsvOutput(
     responding_indexers: number;
     synced_indexers: number;
     healthy_indexers: number;
-    processing_time: number;
   };
   top_by_signal: SubgraphData[];
   top_by_queries: SubgraphData[];
@@ -168,7 +167,6 @@ async function parseCsvOutput(
         (sum, s) => sum + s.indexers_healthy,
         0
       ),
-      processing_time: 0, // This would need to be extracted from the Python output
     };
 
     // Get top subgraphs by signal amount

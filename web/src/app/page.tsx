@@ -149,7 +149,6 @@ export default function Home() {
           (sum, s) => sum + s.indexers_healthy,
           0
         ),
-        processing_time: 0,
       };
       // Top by signal
       const topBySignal = subgraphs
@@ -304,7 +303,6 @@ export default function Home() {
           (sum, s) => sum + s.indexers_healthy,
           0
         ),
-        processing_time: 0,
       };
       const topBySignal = subgraphs
         .filter((s) => s.signal_amount !== "0")

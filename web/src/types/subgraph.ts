@@ -26,7 +26,6 @@ export interface AnalysisResult {
     responding_indexers: number;
     synced_indexers: number;
     healthy_indexers: number;
-    processing_time: number;
   };
   top_by_signal: SubgraphData[];
   top_by_queries: SubgraphData[];
