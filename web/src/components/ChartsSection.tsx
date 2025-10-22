@@ -222,18 +222,6 @@ export default function ChartsSection({
     return "#000000"; // fallback
   };
 
-  const getComputedMutedTextColor = () => {
-    if (typeof window !== "undefined") {
-      const root = document.documentElement;
-      const isDark = root.classList.contains("dark");
-      return isDark ? "#9ca3af" : "#6b7280";
-    }
-    return "#6b7280"; // fallback
-  };
-
-  const computedTextColor = getComputedTextColor();
-  const computedMutedTextColor = getComputedMutedTextColor();
-
   // Define color schemes for different themes
   const colors = {
     primary: [
